@@ -1,0 +1,46 @@
+.Monthly_Main{  
+    height: 70vh;
+    background-color: #ffff;
+    border-radius: 10px;
+    /* margin-left:20px ; */
+}
+
+.Monthly_Main-dark{  
+    height: 20vh;
+    background-color: #262626;
+    border-radius: 10px;
+    /* margin-left:20px ; */
+}
+
+.Monthly_chart{
+
+    display: flex;
+    /* width: 50%; */
+    width: 600px;
+    margin-top: 70px;
+    /* margin-left: 40px; */
+    background-color: #ffff;
+   border-color: black;
+   color: black;
+   }
+   
+   .Monthly_chart-dark{
+
+    display: flex;
+    width: 600px;
+    /* width: 50%; */
+    
+    /* margin-left: 40px; */
+    background-color: #262626;
+   border-color: black;
+   color: black;
+   }
+   
+
+.new_c{
+    display: flex;
+    width: 500px;
+    margin-top: 20px;
+    border-radius: 10px;
+    /* margin-left: 110px; */
+}

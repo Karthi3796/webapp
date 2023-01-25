@@ -1,0 +1,101 @@
+.Daily_Main{
+   
+    /* width: 50%; */
+    height: 50vh;
+    background-color: #dff6ff;
+    border-radius: 10px;
+    
+    
+}
+
+.Weekly_Main{
+ 
+    height: 20vh;
+    background-color: #dff6ff;
+    border-radius: 10px;
+    /* margin-left:20px ; */
+    
+    
+
+}
+.Weekly_Main-dark{
+ 
+    height: 20vh;
+    background-color: #262626;
+    border-radius: 10px;
+    /* margin-left:20px ; */
+      
+}
+
+.daily_chart{
+
+ margin-top: 3px;
+ width: 50%;
+ width: 500px;
+ /* margin-left: 40px; */
+ background-color: #ffff;
+border-color: black;
+color: black;
+}
+
+.Weekly_chart{
+
+    display: flex;
+    /* width: 50%; */
+    width: 600px;
+    min-width: 200px;
+    max-width: 500px;
+    /* margin-left: 40px; */
+    background-color: #ffff;
+   border-color: black;
+   color: black;
+   }
+
+   .Weekly_chart-dark{
+
+    display: flex;
+    /* width: 50%; */
+    width: 600px;
+    /* margin-left: 40px; */
+    background-color: #262626;
+   border-color: black;
+   color: black;
+   }
+
+.new_C{
+    display: flex;
+    width: 500px;
+    margin-top: 20px;
+    border-radius: 10px;
+    margin-left: 110px;
+}
+
+.Capital{
+    margin-top: 20px;
+    font-size: 18px;
+    text-align: center;
+    text-transform: capitalize;
+    line-height: 28px;
+    font-weight: 400;
+    font-family: emoji;
+}
+
+.NoData{
+    margin-left: 37%;
+}
+.NoData-dark{
+    margin-left: 37%;
+    color: white;
+}
+
+
+.Capital-dark{
+    color: aliceblue;
+    margin-top: 20px;
+    font-size: 18px;
+    text-align: center;
+    text-transform: capitalize;
+    line-height: 28px;
+    font-weight: 400;
+    font-family: emoji;
+}

@@ -1,0 +1,58 @@
+.OutSide{
+    margin-top: 50px;
+   margin-left: 20px;
+}
+
+.WeeklyReport{
+    background-color: white;
+    width: 650px;
+    height: 45vh;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.WeeklyReport-dark{
+ 
+    width: 650px;
+    height: 45vh;
+    background-color: #262626;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    /* margin-left:20px ; */
+      
+}
+
+.Individual_Utilization-dark{
+    background-color: #262626;
+    margin-top: 20px;
+    width: 250px;
+    height: 40vh;
+    margin-left: 150px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+}
+
+.Individual_Utilization{
+    background-color: white;
+    margin-top: 20px;
+    width: 250px;
+    height: 40vh;
+    margin-left: 150px;
+    display: flex;
+    flex-direction: row;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+
+}
+
+
+
+.NoData{
+    background-color: white;
+    text-align: center;
+    
+
+}
+
+.Word{
+    margin-top: 50px;
+    width: 5px;
+}

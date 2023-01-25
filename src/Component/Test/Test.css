@@ -1,0 +1,508 @@
+
+[aria-hidden="true"] {
+  display: none;
+}
+
+
+.Reset{
+ 
+  display: flex;
+  margin-left: 20px;
+  margin-top: 25px;
+  text-align: center;
+}
+
+.Gen{
+ 
+  display: flex;
+  margin-left: 70px;
+  margin-top: 20px;
+  text-align: center;
+}
+.light-navbar .css-1f2xuhi-MuiDrawer-docked .MuiDrawer-paper{
+  background-color: #ffff;
+}
+.dark-navbar .css-1f2xuhi-MuiDrawer-docked .MuiDrawer-paper{
+  background-color: #262626;
+}
+.Resetbtn{
+  background-color: #3fa8e4;
+  color: #fff;
+  min-width: 40px;
+  height: 30px;
+  border-radius: 3px;
+  border: none;
+  font-size: 12px;
+  font-weight: 400;
+  width: 60px;
+}
+
+.Resetbtn:hover {
+  background-color: #c96c14;
+  color: white;
+}
+
+.Generate{
+  background-color: #3fa8e4;
+  color: #fff;
+  min-width: 40px;
+  height: 30px;
+  border-radius: 3px;
+  border: none;
+  font-size: 12px;
+  font-weight: 400;
+  width: 100px;
+  margin-left: 40px;
+
+}
+
+.Generate:hover {
+  background-color: #28b9b5;
+  color: white;
+}
+
+.OuterPortion{
+  display: flex;
+  margin-top: 20px;
+  /* margin-bottom: 40PX; */
+  margin-left: 20px;
+  top: 20px;
+  /* background-color: #fdfdfd; */
+  /* background: #2193b0;  
+background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0);  
+background: linear-gradient(to right, #6dd5ed, #2193b0);  */
+
+background: #2980B9;  
+background: -webkit-linear-gradient(to left, #FFFFFF, #6DD5FA, #2980B9);  
+background: linear-gradient(to left, #FFFFFF, #6DD5FA, #2980B9); 
+
+
+  height: 20vh;
+  width: 1200px;
+  left: 10px;
+  border-radius: 20px;
+  box-shadow: 2px 8px 8px 2px rgba(161, 161, 161, 0.07);
+}
+
+.Daily{
+  top: 0px;
+  
+}
+label{
+  font-size: 12px;
+  font-weight: 400;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 16px;
+}
+.Letter-dark{
+  color: #ffff;
+  font-size: 12px;
+  font-weight: 400;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 16px;
+}
+
+.ListRadio{
+  display: flex;  
+  position: relative;
+  top: 3px;
+  bottom: 3px;
+  left: 10px;
+}
+.FirstPortion{
+  /* border: solid 1px #113852; */
+  top: 5px;
+  width: 210px;
+  text-align: left;
+  flex-direction: column;
+  display: block;
+  position: relative;
+  /* padding-left: 15px; */
+  margin-bottom: 1px;
+  cursor: pointer;
+  background-color:white;
+  border-radius: 0px;
+  margin: 15px;
+  font-weight: bold;
+  margin-top: 2px;
+  margin-bottom: 0px;
+}
+
+.Daily-dark{
+  background-color:white;
+
+}
+.FirstPortion-dark{
+      /* border: solid 1px #113852; */
+      top: 5px;
+      width: 210px;
+      text-align: left;
+      flex-direction: column;
+      display: block;
+      position: relative;
+      /* padding-left: 15px; */
+      margin-bottom: 1px;
+      cursor: pointer;
+      color: #ffff;
+      background-color:#262626;
+      border-radius: 0px;
+      margin: 15px;
+      font-weight: bold;
+      margin-bottom: 0px;
+    }
+
+
+
+.FirstPortion:hover {
+  background-color: whitesmoke;
+}
+
+.SecondPortion:hover {
+  background-color: whitesmoke;
+}
+
+.ThirdPortion:hover {
+  background-color: whitesmoke;
+}
+
+.FourthPortion:hover {
+  background-color: whitesmoke;
+}
+
+label{
+  color:black;
+  border: 1px;
+  padding: 10px 0px ;
+  font-family: sans-serif;
+   display: inline-flex; 
+}
+
+.Make{
+  margin-bottom: 3px;
+  position: relative;
+  flex-direction: row;
+  right: 5px;
+  width: 210px;
+  margin-left: 5px;
+  bottom: 30px;
+  height: 20px;
+}
+
+.div.ant-picker.ant_picker_range{
+  margin-bottom: 3px;
+}
+
+.Week-dropdown{
+  margin-top: 10px;
+  max-width: 180px;
+  position: relative;
+  flex-direction: row;
+  margin-bottom: 10px;
+  bottom: 30px;
+  height: 20px;
+  font-display: black;
+  text-decoration-color: black;
+  color: black !important;
+  
+}
+
+.form-control{
+  width: 210px;
+  min-height: 30px;
+  margin-top: 0px;
+  /* margin-right: 50px; */
+  position: relative;
+  /* border-radius: 10px; */
+
+  background-color:white;
+  text-align: center;
+
+  font-size: 12px;
+  font-weight: 400;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 28px;
+}
+
+.form-control-dark{
+  width: 210px;
+  min-height: 30px;
+  margin-top: 0px;
+  /* margin-right: 50px; */
+  position: relative;
+  /* border-radius: 10px; */
+
+  background-color:#262626;
+  text-align: center;
+  color: #ffff;
+  font-size: 12px;
+  font-weight: 400;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 28px;
+}
+
+
+.form-controlexe{
+  width: 210px;
+  height: 30px;
+  font-size: 12px;
+  font-weight: 400;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 28px;
+  background-color:white;
+  text-align: center;
+
+
+}
+
+.form-controlexe-dark{
+  width: 210px;
+  height: 40px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 28px;
+  background-color:#262626;
+  text-align: center;
+  color: white;
+
+}
+
+.SecondPortion{
+  top: 5px;
+  width: 210px;
+  text-align: left;
+  flex-direction: column;
+  display: block;
+  position: relative;
+  /* padding-left: 15px; */
+  margin-bottom: 1px;
+  cursor: pointer;
+  background-color:white;
+  border-radius: 0px;
+  margin: 15px;
+  font-weight: bold;
+  margin-top: 2px;
+  margin-bottom: 0px;
+  
+}
+
+.SecondPortion-dark{
+  top: 5px;
+  width: 210px;
+  text-align: left;
+  flex-direction: column;
+  display: block;
+  position: relative;
+  /* padding-left: 15px; */
+  margin-bottom: 1px;
+  cursor: pointer;
+  color: #FFFFFF;
+  background-color:#262626;
+  border-radius: 0px;
+  margin: 15px;
+  font-weight: bold;
+  margin-top: 2px;
+  margin-bottom: 0px;
+  
+} 
+
+.ThirdPortion{
+  top: 5px;
+  width: 210px;
+  text-align: left;
+  flex-direction: column;
+  display: block;
+  position: relative;
+  /* padding-left: 15px; */
+  margin-bottom: 1px;
+  cursor: pointer;
+  background-color:white;
+  border-radius: 0px;
+  margin: 15px;
+  font-weight: bold;
+  margin-top: 2px;
+  margin-bottom: 0px;
+}
+
+.ThirdPortion-dark{
+  top: 5px;
+  width: 210px;
+  text-align: left;
+  flex-direction: column;
+  display: block;
+  position: relative;
+  /* padding-left: 15px; */
+  margin-bottom: 1px;
+  cursor: pointer;
+  color: #ffff;
+  background-color:#262626;
+  border-radius: 0px;
+  margin: 15px;
+  font-weight: bold;
+  margin-top: 2px;
+  margin-bottom: 0px;
+}
+
+.Month-dropdown{
+  margin-top: 10px;
+  max-width: 180px;
+  position: relative;
+  flex-direction: row;
+  margin-bottom: 10px;
+  bottom: 30px;
+  height: 20px;
+  font-weight: bold;
+  color: black;
+  
+}
+
+.FourthPortion{
+  top: 5px;
+  width: 210px;
+  text-align: left;
+  flex-direction: column;
+  display: block;
+  position: relative;
+  /* padding-left: 15px; */
+  margin-bottom: 1px;
+  cursor: pointer;
+  background-color:white;
+  border-radius: 0px;
+  margin: 15px;
+  font-weight: bold;
+  margin-top: 2px;
+  margin-bottom: 0px;
+  
+    
+}
+
+.FourthPortion-dark{
+  top: 5px;
+  width: 210px;
+  text-align: left;
+  flex-direction: column;
+  display: block;
+  position: relative;
+  /* padding-left: 15px; */
+  margin-bottom: 1px;
+  cursor: pointer;
+  color: #fff;
+  background-color:#262626;
+  border-radius: 0px;
+  margin: 15px;
+  font-weight: bold;
+  margin-top: 2px;
+  margin-bottom: 0px;
+    
+}
+.Backbutton{
+  position: relative;
+  /* left: 20px; */
+  right: 100px;
+
+}
+
+
+.css-1rggxiv-MuiToolbar-root {
+  min-height: 70px;
+}
+
+.nav-brand img {
+  /* background: #FFFFFF; */
+  width: 125px;
+  padding: 0px;
+  margin-left: 0px;
+}
+
+.Year-dropdown{
+  margin-top: 10px;
+  max-width: 180px;
+  position: relative;
+  flex-direction: row;
+  margin-bottom: 10px;
+  bottom: 30px;
+  height: 20px;
+}
+
+.Application-dropdown{
+  display: flex;
+  margin: 15px;
+  max-width: 210px;
+}
+
+.Makeup{
+  
+
+  height: 50px;
+}
+
+.switch{
+  /* display: "inline-block"; */
+  margin-left: auto;
+  align-items: center;
+}
+
+
+.ant-picker-dropdown{
+  z-index: 9999999;
+}
+
+.css-78trlr-MuiButtonBase-root-MuiIconButton-root{
+background-color: #c96c14;
+}
+
+.css-ciy9n4-MuiPaper-root-MuiAppBar-root{
+background-color: transparent !important;
+box-shadow: none !important;
+color: #262626 !important;
+}
+.css-jzk4qw-MuiPaper-root-MuiAppBar-root{
+background-color: transparent !important;
+box-shadow: none !important;
+color: #262626 !important;
+
+}
+
+.css-1k455el {
+/* display: -webkit-box; */
+/* display: -webkit-flex; */
+/* display: -ms-flexbox; */
+/* display: flex; */
+/* -webkit-align-items: center; */
+/* -webkit-box-align: center; */
+/* -ms-flex-align: center; */
+/* align-items: center; */
+/* padding: 0px 8px; */
+/* min-height: 56px; */
+/* -webkit-box-pack: end; */
+-ms-flex-pack: end;
+}
+
+.css-1rggxiv-MuiToolbar-root {
+min-height: 70px;
+background-color: #fff;
+}
+
+.Heading{
+  font-size: 14px;
+  font-weight: 400;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 16px;
+
+}
+
+.ant-picker-dropdown{
+z-index: 9999999;
+}
+
+.ant-picker-dropdown-range {
+padding: 7.54247233px 0;
+left: 15px;
+top: 916px;
+z-index: 10000;
+
+}
+/*  */
+
+
+/*  */

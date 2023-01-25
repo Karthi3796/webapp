@@ -1,0 +1,92 @@
+
+.Pie_Out_New{
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+#legend-container {
+    display: flex;
+    justify-content: center;
+    padding: 0.5em;
+  }
+
+
+
+.Utlity_Teamcenter{
+  
+  display: flex;
+  width: 280px;
+  height: 45vh;
+  /* flex-direction: column; */
+  /* margin-top: 30px; */
+  background-color: #ffff;
+  border-radius: 10px;
+  margin-left: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.BaseModule{
+  display: flex;
+  width: 280px;
+  height: 45vh;
+  background-color: #ffff;
+  border-radius: 10px;
+  margin-left: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+}
+.Utlity_Teamcenter-dark{
+  
+  display: flex;
+  width: 280px;
+  height: 45vh;
+  /* flex-direction: column; */
+  /* margin-top: 30px; */
+  border-radius: 10px;
+  margin-left: 10px;
+  background-color: #262626;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  
+
+}
+
+
+.chartCard {
+  
+    height: calc(45vh - 40px);
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+  }
+  .chartBox {
+    width: 400px;
+    /* padding: 20px; */
+    /* border-radius: 20px; */
+  }
+  table{
+    margin-top: 30px;
+    margin-left: 10px;
+  }
+  table, tr, th, td{
+    /* padding: 10px; */
+    border: 1px solid #666;
+    width: 350px;
+    border-collapse: collapse;
+  }
+
+  .table-fixed{
+    display: block;
+    height: calc(45vh - 40px);
+    overflow-y: auto;
+    float: left;
+  }
+/* .table-fixed thead{
+    position: sticky;
+    top: 0;
+} */
+  /* .table-fixed tr{
+    display: block;
+    
+  } */

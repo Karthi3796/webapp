@@ -1,0 +1,61 @@
+.WeekPicker{
+    /* margin-left: 20px; */
+    margin-top: 20px;
+}
+
+.rs-picker-toggle-wrapper {
+    display: inline-block;
+    max-width: 100%;
+    vertical-align: middle;
+    width: 210px;
+}
+
+.rs-picker-date-menu .rs-calendar-table-cell-week-number{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.rs-picker-date-menu .rs-calendar-table-row:not(.rs-calendar-table-header-row):hover .rs-calendar-table-cell-content {
+    background-color: rgba(204,233,255,.5);
+    background-color: var(--rs-listbox-option-hover-bg);
+    color: #1675e0;
+    color: var(--rs-listbox-option-hover-text);
+}
+
+.rs-picker-date-menu .rs-calendar-table-row:not(.rs-calendar-table-header-row):has(.rs-calendar-table-cell-selected) .rs-calendar-table-cell-content {
+    background-color: #3498ff;
+    background-color: var(--rs-bg-active);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #fff;
+    color: var(--rs-calendar-date-selected-text);
+}
+
+.WeekPicker .weekInfos{
+    margin-top: 20px;
+}
+
+.WeekPicker .weekInfos > div{
+    margin-top: 10px;
+}
+
+.rs-calendar-header-has-month:not(.rs-calendar-header-has-time) .rs-calendar-header-forward {
+    float: right;
+    background-color: aquamarine;
+}
+
+.rs-calendar-header-has-month:not(.rs-calendar-header-has-time) .rs-calendar-header-backward {
+    float: left;
+    background-color: aquamarine;
+}
+
+.rs-anim-fade.rs-anim-in{
+    opacity: 1;
+    pointer-events: unset;
+    left: 55px;
+    top: 207.312px;
+    z-index: 1234;
+    top: 220px;
+}

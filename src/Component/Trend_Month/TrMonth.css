@@ -1,0 +1,54 @@
+.Trend_Main{  
+    height: 20vh;
+    background-color: #1d769a;
+    /* display: flex;
+    flex-direction: row; */
+    border-radius: 10px;
+    margin-left:60px ;
+    margin-top: 20px;
+}
+
+.Trend_Main-dark{  
+    height: 20vh;
+    background-color: #262626;
+    border-radius: 10px;
+    /* margin-left:20px ; */
+}
+
+.Trend_chart{
+
+    display: flex;
+    /* width: 50%; */
+    width: 600px;
+    margin-top: 20px;
+    margin-left: 40px;
+    background-color: #ffff;
+    border-color: black;
+    color: black;
+}
+   .Trend_chart-dark{
+    display: flex;
+    /* width: 50%; */
+    width: 600px;
+    margin-top: 20px;
+    margin-left: 40px;
+    background-color: #dff6ff;
+    border-color: black;
+    color: black;
+}
+   
+
+.new_c1{
+    /* display: flex; */
+    background-color: #ffff;
+    /* height: 40px; */
+    width: 680px;
+    margin-top: 40px;
+    border-radius: 10px;
+    /* margin-left: 180px; */
+}
+
+.Trend-dropdown{
+    margin-top: 20px;
+    margin-left: 390px;
+}

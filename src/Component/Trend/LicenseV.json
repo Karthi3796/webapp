@@ -1,0 +1,845 @@
+ [
+    {
+        "Total_License": "CAR_PLANTSIM_PACK_5_C",
+        "Count": "5",
+        "Application": "5"
+    },
+    {
+        "Total_License": "CAR_PROCESS_SIMULATE_C",
+        "Count": "4",
+        "Application": "4"
+    },
+    {
+        "Total_License": "FEA_PD_TICON_INTEG_C",
+        "Count": "1",
+        "Application": "1"
+    },
+    {
+        "Total_License": "FEA_PLANTSIM_INTERFACES_C",
+        "Count": "1",
+        "Application": "1"
+    },
+    {
+        "Total_License": "FEA_PS_ASSEMBLER_C",
+        "Count": "4",
+        "Application": "4"
+    },
+    {
+        "Total_License": "FEA_PS_AUTO_PATH_PLANNER_C",
+        "Count": "1",
+        "Application": "1"
+    },
+    {
+        "Total_License": "FEA_PS_HUMAN_ADV_JACK_C",
+        "Count": "3",
+        "Application": "3"
+    },
+    {
+        "Total_License": "FEA_PS_HUMAN_C",
+        "Count": "3",
+        "Application": "3"
+    },
+    {
+        "Total_License": "FEA_PS_POINT_CLOUD_ADV_C",
+        "Count": "1",
+        "Application": "1"
+    },
+    {
+        "Total_License": "FEA_PS_ROBOTICS_C",
+        "Count": "1",
+        "Application": "1"
+    },
+    {
+        "Total_License": "FEA_PS_STD_INTERF_C",
+        "Count": "1",
+        "Application": "1"
+    },
+    {
+        "Total_License": "TN70171C",
+        "Count": "1",
+        "Application": "1"
+    },
+    {
+        "Total_License": "nx_design_token",
+        "Count": "200",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "MA_adv_assemblies",
+        "Count": "1",
+        "Application": "1"
+    },
+    {
+        "Total_License": "NX12620",
+        "Count": "2",
+        "Application": "2"
+    },
+    {
+        "Total_License": "NX91110",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "active_collab",
+        "Count": "17",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "adv_structure_mgt",
+        "Count": "12",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "assemblies",
+        "Count": "1",
+        "Application": "1"
+    },
+    {
+        "Total_License": "borrowing",
+        "Count": "1",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "cam_author",
+        "Count": "1",
+        "Application": "1"
+    },
+    {
+        "Total_License": "cam_base",
+        "Count": "1",
+        "Application": "1"
+    },
+    {
+        "Total_License": "catv5tojt_sca",
+        "Count": "1",
+        "Application": "1"
+    },
+    {
+        "Total_License": "change_user",
+        "Count": "11",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "classification_user",
+        "Count": "3",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "cls_ai_user",
+        "Count": "2",
+        "Application": "2"
+    },
+    {
+        "Total_License": "config_solve_level2",
+        "Count": "2",
+        "Application": "2"
+    },
+    {
+        "Total_License": "context_mgt_user",
+        "Count": "6",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "dpv_process_auth",
+        "Count": "6",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "drafting",
+        "Count": "1",
+        "Application": "1"
+    },
+    {
+        "Total_License": "easy_plan_lite",
+        "Count": "6",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "easy_plan_pro",
+        "Count": "6",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "ep_line_balancing",
+        "Count": "6",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "erp_integration",
+        "Count": "1",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "features_modeling",
+        "Count": "1",
+        "Application": "1"
+    },
+    {
+        "Total_License": "gateway",
+        "Count": "1",
+        "Application": "1"
+    },
+    {
+        "Total_License": "gateway_id",
+        "Count": "1000",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "ideas_integration",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "manufacturing_access",
+        "Count": "6",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "manufacturing_author",
+        "Count": "6",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "mfg_advanced_time",
+        "Count": "6",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "mfg_alt_mgmt",
+        "Count": "6",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "mfg_mbm_author",
+        "Count": "6",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "mfg_mbm_author_ep",
+        "Count": "6",
+        "Application": "6"
+    },
+    {
+        "Total_License": "mfg_part_author",
+        "Count": "6",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "mfg_planning_lite",
+        "Count": "7",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "mfg_plant_author",
+        "Count": "9",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "mpp_logistics_access",
+        "Count": "6",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "mpp_logistics_author",
+        "Count": "6",
+        "Application": "6"
+    },
+    {
+        "Total_License": "mpp_logistics_user",
+        "Count": "6",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "mrl_connect",
+        "Count": "1",
+        "Application": "1"
+    },
+    {
+        "Total_License": "nx_access_tcclass",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "nx_integration",
+        "Count": "5",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "nx_nas_bn_basic_dsk",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "nx_point_cloud_view",
+        "Count": "1",
+        "Application": "1"
+    },
+    {
+        "Total_License": "nx_reuse_cadenas",
+        "Count": "1",
+        "Application": "1"
+    },
+    {
+        "Total_License": "open_sdk",
+        "Count": "1",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "prod_config_author",
+        "Count": "2",
+        "Application": "2"
+    },
+    {
+        "Total_License": "proe_integration",
+        "Count": "1",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "proetojt_3d_annot",
+        "Count": "2",
+        "Application": "2"
+    },
+    {
+        "Total_License": "proetojt_translator",
+        "Count": "3",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "resource_manager",
+        "Count": "1",
+        "Application": "1"
+    },
+    {
+        "Total_License": "resource_manager_mrl",
+        "Count": "1",
+        "Application": "1"
+    },
+    {
+        "Total_License": "resource_manager_nx",
+        "Count": "1",
+        "Application": "1"
+    },
+    {
+        "Total_License": "sap_gateway",
+        "Count": "4",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "sap_gateway_s4hana",
+        "Count": "4",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "solid_modeling",
+        "Count": "1",
+        "Application": "1"
+    },
+    {
+        "Total_License": "solidworks_integr",
+        "Count": "1",
+        "Application": "1"
+    },
+    {
+        "Total_License": "solidworks_integration",
+        "Count": "1",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "solidworkstojt_trans",
+        "Count": "1",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "solidworkstojt_translator",
+        "Count": "1",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "step_ap214",
+        "Count": "1",
+        "Application": "1"
+    },
+    {
+        "Total_License": "tc_partition_mgmt",
+        "Count": "2",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "tcmfg_adv_acc_author",
+        "Count": "6",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "tcmfg_ewi_viewer",
+        "Count": "6",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "tcmfg_mes_author",
+        "Count": "6",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "teamcenter_admin",
+        "Count": "2",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "teamcenter_author",
+        "Count": "12",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "teamcenter_consumer",
+        "Count": "5",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "teamcenter_designer",
+        "Count": "2",
+        "Application": "2"
+    },
+    {
+        "Total_License": "test_manager",
+        "Count": "6",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "tfea",
+        "Count": "4",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "vendor_mgt",
+        "Count": "12",
+        "Application": "12"
+    },
+    {
+        "Total_License": "vis_simp_rendering",
+        "Count": "3",
+        "Application": "Tc-VisMockup"
+    },
+    {
+        "Total_License": "visview_base",
+        "Count": "17",
+        "Application": "Tc-VisMockup"
+    },
+    {
+        "Total_License": "visview_base",
+        "Count": "1",
+        "Application": "Tc-VisMockup"
+    },
+    {
+        "Total_License": "visview_mockup",
+        "Count": "3",
+        "Application": "Tc-VisMockup"
+    },
+    {
+        "Total_License": "visview_simplified_rendering",
+        "Count": "3",
+        "Application": "Tc-VisMockup"
+    },
+    {
+        "Total_License": "visview_visualreport",
+        "Count": "3",
+        "Application": "Tc-VisMockup"
+    },
+    {
+        "Total_License": "vp_convert",
+        "Count": "17",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "vp_print",
+        "Count": "17",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "server_id",
+        "Count": "1",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "prd_counter_ps",
+        "Count": "4",
+        "Application": "Process Simulate"
+    },
+    {
+        "Total_License": "prd_em_workplace_nt",
+        "Count": "4",
+        "Application": "Process Simulate"
+    },
+    {
+        "Total_License": "prd_empcommandcontrol",
+        "Count": "4",
+        "Application": "Process Simulate"
+    },
+    {
+        "Total_License": "prd_empinfoviewer_runtime",
+        "Count": "4",
+        "Application": "Process Simulate"
+    },
+    {
+        "Total_License": "prd_emppropertiesctl_runtime",
+        "Count": "4",
+        "Application": "Process Simulate"
+    },
+    {
+        "Total_License": "prd_emptreecontrol_runtime",
+        "Count": "4",
+        "Application": "Process Simulate"
+    },
+    {
+        "Total_License": "prd_emserver_access",
+        "Count": "4",
+        "Application": "Process Simulate"
+    },
+    {
+        "Total_License": "prd_ewi_assy_light",
+        "Count": "4",
+        "Application": "Process Simulate"
+    },
+    {
+        "Total_License": "prd_ewi_assy_view",
+        "Count": "4",
+        "Application": "Process Simulate"
+    },
+    {
+        "Total_License": "prd_jtin",
+        "Count": "4",
+        "Application": "Process Simulate"
+    },
+    {
+        "Total_License": "prd_ps_teamcenter_access",
+        "Count": "4",
+        "Application": "Process Simulate"
+    },
+    {
+        "Total_License": "prd_ug_ci",
+        "Count": "4",
+        "Application": "4"
+    },
+    {
+        "Total_License": "prd_common",
+        "Count": "1",
+        "Application": "1"
+    },
+    {
+        "Total_License": "prd_em_assembler",
+        "Count": "4",
+        "Application": "Process Simulate"
+    },
+    {
+        "Total_License": "prd_em_human_advanced",
+        "Count": "3",
+        "Application": "Process Simulate"
+    },
+    {
+        "Total_License": "prd_continuous_base",
+        "Count": "1",
+        "Application": "1"
+    },
+    {
+        "Total_License": "prd_em_robotics",
+        "Count": "1",
+        "Application": "1"
+    },
+    {
+        "Total_License": "prd_line_simulation",
+        "Count": "1",
+        "Application": "Process Simulate"
+    },
+    {
+        "Total_License": "prd_mfg_base",
+        "Count": "1",
+        "Application": "1"
+    },
+    {
+        "Total_License": "prd_olp_base",
+        "Count": "1",
+        "Application": "Process Simulate"
+    },
+    {
+        "Total_License": "prd_catia",
+        "Count": "1",
+        "Application": "Process Simulate"
+    },
+    {
+        "Total_License": "prd_dxf",
+        "Count": "1",
+        "Application": "Process Simulate"
+    },
+    {
+        "Total_License": "prd_eai",
+        "Count": "1",
+        "Application": "Process Simulate"
+    },
+    {
+        "Total_License": "prd_idi",
+        "Count": "1",
+        "Application": "Process Simulate"
+    },
+    {
+        "Total_License": "prd_iges",
+        "Count": "1",
+        "Application": "Process Simulate"
+    },
+    {
+        "Total_License": "prd_step",
+        "Count": "1",
+        "Application": "Process Simulate"
+    },
+    {
+        "Total_License": "prd_stl",
+        "Count": "1",
+        "Application": "Process Simulate"
+    },
+    {
+        "Total_License": "NX12620_3d_to_2d_flattener",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "NX12620_assemblies",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "NX12620_drafting",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "NX12620_dxfdwg",
+        "Count": "2",
+        "Application": "2"
+    },
+    {
+        "Total_License": "NX12620_features_modeling",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "NX12620_gateway",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "NX12620_geometric_tol",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "NX12620_iges",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "NX12620_ld_author",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "NX12620_ld_line_designer",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "NX12620_nx_access_tcclass",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "NX12620_nx_visual_reporting",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "NX12620_pts_author",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "NX12620_pts_consumer",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "NX12620_solid_modeling",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "NX12620_step_ap203",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "NX12620_step_ap214",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "NX91110_3d_to_2d_flattener",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "NX91110_assemblies",
+        "Count": "2",
+        "Application": "2"
+    },
+    {
+        "Total_License": "NX91110_drafting",
+        "Count": "2",
+        "Application": "2"
+    },
+    {
+        "Total_License": "NX91110_dxf_to_ug",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "NX91110_dxfdwg",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "NX91110_features_modeling",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "NX91110_gateway",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "NX91110_grip_execute",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "NX91110_iges",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "NX91110_nx_freeform_1",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "NX91110_nx_nastran_export",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "NX91110_nx_sheet_metal",
+        "Count": "2",
+        "Application": "2"
+    },
+    {
+        "Total_License": "NX91110_nx_spsd_stress",
+        "Count": "2",
+        "Application": "2"
+    },
+    {
+        "Total_License": "NX91110_nx_spsd_vibration",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "NX91110_pcf_package_file",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "NX91110_pstudio_cons",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "NX91110_pv_ugdatagenerator",
+        "Count": "2",
+        "Application": "2"
+    },
+    {
+        "Total_License": "NX91110_sla_3d_systems",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "NX91110_solid_modeling",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "NX91110_step_ap203",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "NX91110_step_ap214",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "NX91110_studio_visualize",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "NX91110_ug_kf_checker",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "NX91110_ug_kf_execute",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "NX91110_ug_nas_des",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "NX91110_ug_smart_models",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "NX91110_ug_to_dxf",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "NX91110_ug_web_express",
+        "Count": "2",
+        "Application": "NX"
+    },
+    {
+        "Total_License": "NX91110_ugopen_menuscript",
+        "Count": "2",
+        "Application": "2"
+    },
+    {
+        "Total_License": "emplant_ifpack",
+        "Count": "1",
+        "Application": "Plant Simulate"
+    },
+    {
+        "Total_License": "emplant_pro",
+        "Count": "1",
+        "Application": "Plant Simulate"
+    },
+    {
+        "Total_License": "emplant_sim",
+        "Count": "5",
+        "Application": "Plant Simulate"
+    },
+    {
+        "Total_License": ""
+    }
+]

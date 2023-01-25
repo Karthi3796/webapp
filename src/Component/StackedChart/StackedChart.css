@@ -1,0 +1,190 @@
+
+
+.Layer1{
+    background-color: white;
+    width: 95%;
+    height: 65vh;
+    margin-left: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+
+
+.Layer1-dark{
+ 
+    background-color: #262626;
+    width: 95%;
+    height: 65vh;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+      
+}
+
+
+.NoData{
+    background-color: white;
+    text-align: center;
+}
+
+.Word{
+    margin-top: 50px;
+    width: 5px;
+}
+
+/* .Layer2{
+    width: 80%;
+    margin-left: 60px;
+    height: 65vh;
+   
+} */
+
+/* Second */
+
+.OutSide{
+    margin-top: 10px;
+   /* margin-left: 20px; */
+   display: flex;
+    flex-direction: row;
+}
+
+.WeeklyReport{
+    background-color: white;
+    width: 95%;
+    height: 65vh;
+    /* margin-left: 20px; */
+  
+    /* min-height: 250px; */
+    /* height: 500px; */
+    overflow-y: scroll;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+
+
+.WeeklyReport-dark{
+ 
+
+    background-color: #262626;
+    width: 95%;
+    height: 65vh;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    /* margin-left:20px ; */
+      
+}
+
+
+.NoData{
+    background-color: white;
+    text-align: center;
+}
+
+.Word{
+    margin-top: 50px;
+    width: 5px;
+}
+
+.subbox{
+    height: 225vh;
+    width: 95%;
+    margin-left: 60px;
+    /* overflow-y: scroll; */
+}
+
+/* Tabs */
+
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background: #fff;
+  }
+  
+  .tainer {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 95%;
+    height: 80vh;
+    margin-left: 20px;
+    margin-top: 60px;
+    background: #f1f1f1;
+    /* margin: 100px auto 0; */
+    /* word-break: break-all; */
+    border: 1px solid rgba(0, 0, 0, 0.274);
+
+
+
+
+  }
+  
+  .bloc-tabs {
+    display: flex;
+  }
+  .tabs {
+  
+    padding: 15px;
+    text-align: center;
+    width: 20%;
+    background: rgba(128, 128, 128, 0.075);
+    cursor: pointer;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.274);
+    /* box-sizing: content-box; */
+    position: relative;
+    outline: none;
+  }
+  .tabs:not(:last-child){
+    border-right: 1px solid rgba(0, 0, 0, 0.274);
+  }
+  
+  .active-tabs  {
+    background: white;
+    border-bottom: 1px solid transparent;
+  }
+  
+  .active-tabs::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% + 2px);
+    height: 5px;
+    background: rgb(88, 147, 241);
+  }
+  
+  
+  
+  button {
+    border: none;
+    
+  }
+  .content-tabs {
+    flex-grow : 1;
+  }
+  .content {
+    background: white;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
+  .content h2 {
+    padding: 0px 0 5px 0px;
+  }
+  .content hr {
+    width: 100px;
+    height: 2px;
+    background: #222;
+    margin-bottom: 5px;
+  }
+  .content p {
+    width: 100%;
+    height: 100%;
+  }
+  .active-content {
+    display: block;
+  }
+  

@@ -1,0 +1,302 @@
+[
+    {
+        "Total_License": "active_collab",
+        "Count": "956",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "adv_structure_mgt",
+        "Count": "876",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "borrowing",
+        "Count": "1",
+        "Application": null
+    },
+    {
+        "Total_License": "catia_integration",
+        "Count": "205",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "catv5tojt_sca",
+        "Count": "2",
+        "Application": "Tc-VisMockup"
+    },
+    {
+        "Total_License": "change_access",
+        "Count": "285",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "change_author",
+        "Count": "109",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "classification_acces",
+        "Count": "265",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "classification_authr",
+        "Count": "15",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "context_mgt_access",
+        "Count": "267",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "context_mgt_author",
+        "Count": "5",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "design_de",
+        "Count": "30",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "ideas_integration",
+        "Count": "1",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "manufacturing_access",
+        "Count": "265",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "manufacturing_author",
+        "Count": "2",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "mfg_planning_lite",
+        "Count": "2",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "mfg_plant_author",
+        "Count": "2",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "mro_asmaintained_mgr",
+        "Count": "20",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "mro_author",
+        "Count": "20",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "mro_serv_event_mgt",
+        "Count": "20",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "mro_serv_processing",
+        "Count": "20",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "mro_service_event_mgt",
+        "Count": "20",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "mro_service_processing",
+        "Count": "20",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "multi_structure_cmp",
+        "Count": "976",
+        "Application": null
+    },
+    {
+        "Total_License": "multisite_server",
+        "Count": "2",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "nx_integration",
+        "Count": "1",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "plant_struct_editor",
+        "Count": "2",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "plant_structure_editor",
+        "Count": "2",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "platform_des_access",
+        "Count": "370",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "platform_des_author",
+        "Count": "58",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "portfolio_access",
+        "Count": "265",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "portfolio_author",
+        "Count": "15",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "prod_des_access",
+        "Count": "370",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "prod_des_author",
+        "Count": "58",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "proe_integration",
+        "Count": "1",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "proetojt_3d_annot",
+        "Count": "1",
+        "Application": "Tc-VisMockup"
+    },
+    {
+        "Total_License": "proetojt_translator",
+        "Count": "2",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "proetojt_translator",
+        "Count": "2",
+        "Application": "Tc-VisMockup"
+    },
+    {
+        "Total_License": "prog_exec_access",
+        "Count": "265",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "prog_exec_author",
+        "Count": "69",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "requirements_access",
+        "Count": "265",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "requirements_author",
+        "Count": "15",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "sap_gateway",
+        "Count": "69",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "sap_gateway_s4hana",
+        "Count": "69",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "supplier_cf",
+        "Count": "130",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "tc_integ_frmwrk",
+        "Count": "30",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "tc_srm_rfx",
+        "Count": "1",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "tcaa_integration",
+        "Count": "12",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "tcmfg_adv_acc_author",
+        "Count": "2",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "teamcenter_admin",
+        "Count": "2",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "teamcenter_author",
+        "Count": "876",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "teamcenter_consumer",
+        "Count": "100",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "vendor_mgt",
+        "Count": "876",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "visview_base",
+        "Count": "976",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "visview_mockup",
+        "Count": "3",
+        "Application": "Tc-VisMockup"
+    },
+    {
+        "Total_License": "visview_pro",
+        "Count": "25",
+        "Application": "Tc-VisMockup"
+    },
+    {
+        "Total_License": "visview_std",
+        "Count": "50",
+        "Application": null
+    },
+    {
+        "Total_License": "visview_web_viewonly",
+        "Count": "205",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "vp_convert",
+        "Count": "976",
+        "Application": "Teamcenter"
+    },
+    {
+        "Total_License": "vp_print",
+        "Count": "976",
+        "Application": "Teamcenter"
+    }
+]
