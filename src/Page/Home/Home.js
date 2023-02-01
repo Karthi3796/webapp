@@ -6,12 +6,13 @@ import Features from "../../Component/features/Features";
 import { ThemeContext } from "../../App";
 import PersistentDrawerLeft from "../../Component/Test/Test";
 import BasicTable from "../../Component/Table/BasicTable";
-import LineChart from "../../Component/LineChart/LineChart";
+import LinegraphCustomRange from "../../Component/LineChart/LineChart";
 import StackedChart from "../../Component/StackedChart/StackedChart";
 import FourBlockChart from "../../Component/FourBlockerChart/FourBlockChart";
 import Navbar from "../../Component/Navbar/Navbar";
 import ChartTest from "../../Component/ChartTest/ChartTest";
 import DateChart from "../../Component/DateChart/DateChart";
+import CustomChart from "../../Component/CustomChart/CustomChart";
 
 
 function Home() {
@@ -23,6 +24,7 @@ function Home() {
   const [selectedOptions, setSelectedOptions] = useState("");
   const [value_Week_DD, setValue_Week] = useState("");
   const [dates, setDates] = useState({ from: "", to: "" });
+  console.log(typeof(dates.from))
   const [value_Month, setValue_Month] = useState("");
   const [value_Year, setValue_Year] = useState("");
   const [value_Module, setValue_Module] = useState("");
@@ -93,12 +95,12 @@ function Home() {
             selectedOptions = {selectedOptions}
             setSelectedOptions = {setSelectedOptions}
            />
-            {/* <LineChart 
+            <LinegraphCustomRange 
         selectedOption={selectedOption}
         setSelectedOption={setSelectedOption}
         value_Application={value_Application}
         setValue_Application={setValue_Application}
-        />  */}
+        /> 
         <FourBlockChart
        selectedOption={selectedOption}
        setSelectedOption={setSelectedOption}
@@ -108,6 +110,10 @@ function Home() {
 
           <div className="ThirdRow">
             {/* <ChartTest /> */}
+            {/* <CustomChart 
+           dates={dates}
+           value_Application={value_Application}
+            /> */}
        
         {/* <BasicTable
           value_Application={value_Application}

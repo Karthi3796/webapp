@@ -45,41 +45,60 @@ const FourBlockChart = ({value_Application, selectedOption})=>{
     let arrayOfSetOfUser=[];
     let moduleUserlist = {};
     // console.log('label',label.indexOf(29))
-    if ((selectedOption.name == 'Today' || selectedOption.name == 'Yesterday') && selectedOption.value.length !== 0)
+    if ((selectedOption.name == 'Today' || selectedOption.name == 'Yesterday' || selectedOption.name == "Custom Range") && selectedOption.value.length !== 0)
     {
     
     
-        const startTime = 0; // Set the starting time for the day (Railway time: hour of the day)
+      const startTime = 0; // Set the starting time for the day (Railway time: hour of the day)
+
+      // Getting today's date
+      const today = new Date();
+      // Setting the start time of the day
+      today.setHours(startTime,0,0,0);
     
-        // Getting today's date
-        const today = new Date();
-        // Setting the start time of the day
-        today.setHours(startTime,0,0,0);
+      // Getting date and time after 24 hrs
+      const tomorrow = new Date();
+      tomorrow.setHours(startTime,0,0,0)
+      tomorrow.setDate(tomorrow.getDate()+ 1);
     
-        // Getting date and time after 24 hrs
-        const tomorrow = new Date();
-        tomorrow.setHours(startTime,0,0,0)
-        tomorrow.setDate(tomorrow.getDate()+ 1);
+      // Getting date and time before 24 hrs
+      const Yesterday = new Date();
+      Yesterday.setHours(startTime,0,0,0)
+      Yesterday.setDate(Yesterday.getDate() - 1);
     
-        // Getting date and time before 24 hrs
-        const Yesterday = new Date();
-        Yesterday.setHours(startTime,0,0,0)
-        Yesterday.setDate(Yesterday.getDate() - 1);
+      // Defining start date time
+      let startDateTime= today;
+      // Defining end date time
+      let endDateTime= tomorrow;
+      if (selectedOption.name == 'Today')
+      {
+            // Defining start date time
+       startDateTime= today;
+      // Defining end date time
+       endDateTime= tomorrow;
+      }
     
-        // Defining start date time
-        let startDateTime= today;
-        // Defining end date time
-        let endDateTime= tomorrow;
-        if (selectedOption.name == 'Yesterday')
-        {
-              // Defining start date time
-        startDateTime= Yesterday;
-        // Defining end date time
-        endDateTime= today;
-        }
+      else if (selectedOption.name == 'Yesterday')
+      {
+            // Defining start date time
+      startDateTime= Yesterday;
+      // Defining end date time
+      endDateTime= today;
+      }
+      else if (selectedOption.name == "Custom Range")
+      {
+        startDateTime =  new Date(selectedOption.fromDate);
+        startDateTime.setHours(0,0,0,0);
+        endDateTime= new Date(selectedOption.toDate);
+        endDateTime.setDate(endDateTime.getDate()+1);
+        endDateTime.setSeconds(-1);
+        console.log("StartDate",startDateTime);
+        console.log("EndDate",endDateTime)
+    
+      }
         
         // Check if the selected Data range option is today or yesterday
-        if((selectedOption.name == 'Today' || selectedOption.name == 'Yesterday') &&  selectedOption.value.length !== 0 )
+        if((selectedOption.name == 'Today' || selectedOption.name == 'Yesterday' || selectedOption.name == "Custom Range") &&  selectedOption.value.length !== 0 )
         {
     
     

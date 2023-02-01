@@ -38,7 +38,10 @@ const StackedChart = ({value_Application,value_Year, selectedOption, selectedOpt
     let arrayOfSetOfUserFirst = [];  
     let arrYearFirst = [];
     let moduleUserlist = {};
-if ((selectedOption.name == 'Today' || selectedOption.name == 'Yesterday') && selectedOption.value.length !== 0)
+
+    console.log(selectedOption)
+
+if ((selectedOption.name == 'Today' || selectedOption.name == 'Yesterday' || selectedOption.name == "Custom Range") && selectedOption.value.length !== 0 )
 {
 
 
@@ -63,16 +66,35 @@ if ((selectedOption.name == 'Today' || selectedOption.name == 'Yesterday') && se
     let startDateTime= today;
     // Defining end date time
     let endDateTime= tomorrow;
-    if (selectedOption.name == 'Yesterday')
+    if (selectedOption.name == 'Today')
+    {
+          // Defining start date time
+     startDateTime= today;
+    // Defining end date time
+     endDateTime= tomorrow;
+    }
+
+    else if (selectedOption.name == 'Yesterday')
     {
           // Defining start date time
     startDateTime= Yesterday;
     // Defining end date time
     endDateTime= today;
     }
+    else if (selectedOption.name == "Custom Range")
+    {
+      startDateTime =  new Date(selectedOption.fromDate);
+      startDateTime.setHours(0,0,0,0);
+      endDateTime= new Date(selectedOption.toDate);
+      endDateTime.setDate(endDateTime.getDate()+1);
+      endDateTime.setSeconds(-1);
+      console.log("StartDate",startDateTime);
+      console.log("EndDate",endDateTime)
+
+    }
     
     // Check if the selected Data range option is today or yesterday
-    if((selectedOption.name == 'Today' || selectedOption.name == 'Yesterday') &&  selectedOption.value.length !== 0 )
+    if((selectedOption.name == 'Today' || selectedOption.name == 'Yesterday' || selectedOption.name == "Custom Range") &&  selectedOption.value.length !== 0 )
     {
       // Iterating the elements in data json file
       datas.forEach( (e) => 
@@ -84,12 +106,12 @@ if ((selectedOption.name == 'Today' || selectedOption.name == 'Yesterday') && se
         foundDateTime = new Date(foundDateTime[0], foundDateTime[1]-1, foundDateTime[2], foundDateTime[3], foundDateTime[4], foundDateTime[5]);
 
         // Check if the Applicaton matches and if (tomorrow > foundDateTime > today) 
-        console.log(startDateTime)
-        console.log(foundDateTime)
-        console.log(endDateTime)
+        // console.log(startDateTime)
+        // console.log(foundDateTime)
+        // console.log(endDateTime)
         if(e.Application === value_Application && foundDateTime >= startDateTime && foundDateTime <= endDateTime)
         {
-          console.log("entered")
+          // console.log("entered")
           // check if the moduleUserlist has the found mould object already, if not adds the new key and creates a list.  
           if (!(e.Module in moduleUserlist))
           {
@@ -430,41 +452,60 @@ let arrUserModuleCount = [];
 let arrYear = [];
 let moduleUserlistFirst = [];
 
-if ((selectedOption.name == 'Today' || selectedOption.name == 'Yesterday') && selectedOption.value.length !== 0)
+if ((selectedOption.name == 'Today' || selectedOption.name == 'Yesterday' || selectedOption.name == "Custom Range") && selectedOption.value.length !== 0)
 {
 
 
-    const startTime = 0; 
+  const startTime = 0; // Set the starting time for the day (Railway time: hour of the day)
 
-   
-    const today = new Date();
-   
-    today.setHours(startTime,0,0,0);
+  // Getting today's date
+  const today = new Date();
+  // Setting the start time of the day
+  today.setHours(startTime,0,0,0);
 
-   
-    const tomorrow = new Date();
-    tomorrow.setHours(startTime,0,0,0)
-    tomorrow.setDate(tomorrow.getDate()+ 1);
+  // Getting date and time after 24 hrs
+  const tomorrow = new Date();
+  tomorrow.setHours(startTime,0,0,0)
+  tomorrow.setDate(tomorrow.getDate()+ 1);
 
-    // Getting date and time before 24 hrs
-    const Yesterday = new Date();
-    Yesterday.setHours(startTime,0,0,0)
-    Yesterday.setDate(Yesterday.getDate() - 1);
+  // Getting date and time before 24 hrs
+  const Yesterday = new Date();
+  Yesterday.setHours(startTime,0,0,0)
+  Yesterday.setDate(Yesterday.getDate() - 1);
 
-  
-    let startDateTime= today;
-   
-    let endDateTime= tomorrow;
-    if (selectedOption.name == 'Yesterday')
-    {
-          
-    startDateTime= Yesterday;
+  // Defining start date time
+  let startDateTime= today;
+  // Defining end date time
+  let endDateTime= tomorrow;
+  if (selectedOption.name == 'Today')
+  {
+        // Defining start date time
+   startDateTime= today;
+  // Defining end date time
+   endDateTime= tomorrow;
+  }
+
+  else if (selectedOption.name == 'Yesterday')
+  {
+        // Defining start date time
+  startDateTime= Yesterday;
+  // Defining end date time
+  endDateTime= today;
+  }
+  else if (selectedOption.name == "Custom Range")
+  {
+    startDateTime =  new Date(selectedOption.fromDate);
+    startDateTime.setHours(0,0,0,0);
+    endDateTime= new Date(selectedOption.toDate);
+    endDateTime.setDate(endDateTime.getDate()+1);
+    endDateTime.setSeconds(-1);
+    console.log("StartDate",startDateTime);
+    console.log("EndDate",endDateTime)
+
+  }
     
-    endDateTime= today;
-    }
     
-    
-    if((selectedOption.name == 'Today' || selectedOption.name == 'Yesterday') &&  selectedOption.value.length !== 0 )
+    if((selectedOption.name == 'Today' || selectedOption.name == 'Yesterday' || selectedOption.name == "Custom Range") &&  selectedOption.value.length !== 0 )
     {
 
 

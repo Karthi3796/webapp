@@ -9,6 +9,7 @@ import { components } from 'react-select';
 import Multiselect from 'multiselect-react-dropdown';
 import { DatePicker } from "antd";
 import moment from "moment";
+import { useEffect } from "react";
 
 const { RangePicker } = DatePicker;
 
@@ -47,6 +48,7 @@ function Navbar({
       const [isExpanded, setExpendState] = useState(false);
     
       const [dropdownvalue,setDropDownValue] = useState("");
+      console.log(dropdownvalue)
     
       const handlechange_Week = (e) => {
         setValue_Week(e.target.value);
@@ -104,7 +106,7 @@ function Navbar({
         setValue_Month("");
         setValue_Application("");
         setValue_Application_1("");
-        setSelectedOptions("");
+        setDropDownValue("");
         // setSelected("");
       };
     
@@ -118,6 +120,9 @@ function Navbar({
         // alert('sss')
     
         setValue_Application(value_Application_1);
+        if(dropdownvalue==="Custom Range"){
+          getDateRange()
+        }
       };
     
       // let change_Axis_Color  = [];
@@ -272,6 +277,20 @@ const getPreviousQuarterName = () => {
   return {name: "Month", value: previousQuarterMonths, Year: [previousQuarterYear.toString()], option: "LastQuarter"};
 } 
 
+const  getDateRange = () => {
+  return selectedOption
+
+}
+console.log(dates.from)
+console.log(dates.to)
+
+useEffect (()=>{
+ setSelectedOption({name: "Custom Range", value: ['1','2'], Year: [], option: "today", fromDate: dates.from, toDate: dates.to })
+},[dates])
+
+console.log(selectedOption)
+
+
 console.log(getPreviousQuarterName());
     
       const handleSelected = (event) => {
@@ -296,8 +315,10 @@ console.log(getPreviousQuarterName());
         setSelectedOption(getCurrentQuarterName());
         else if (event.target.value === "Last Quater")
         setSelectedOption(getPreviousQuarterName());
+        // else if (event.target.value === "Custom Range") setSelectedOption(getDateRange());
       };
-    
+
+
 // ########## Today #################### //
 const getToday = () => {
   let date = new Date();
@@ -373,10 +394,12 @@ console.log(getYesterday());
                 <option value="Last Quater">Last Quarter</option>
                 <option value="Last 6Months">Last 5 Month</option>
                 <option value="Last 6Years">Last 5 Year</option>
+                <option value="Custom Range">Custom Range</option>
 
               </select>
             </div>
-            <div className="Make">
+{ dropdownvalue === "Custom Range" ?
+            (<div className="Make">
                   <RangePicker
                     className="DatePicker"
                     onChange={(values) => {
@@ -391,7 +414,7 @@ console.log(getYesterday());
                       }
                     }}
                   />
-                </div>
+                </div>): ""}
 			<div className="Application">
             <div className="Application-dropdown">
               <select
