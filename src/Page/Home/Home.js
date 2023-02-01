@@ -9,6 +9,9 @@ import BasicTable from "../../Component/Table/BasicTable";
 import LineChart from "../../Component/LineChart/LineChart";
 import StackedChart from "../../Component/StackedChart/StackedChart";
 import FourBlockChart from "../../Component/FourBlockerChart/FourBlockChart";
+import Navbar from "../../Component/Navbar/Navbar";
+import ChartTest from "../../Component/ChartTest/ChartTest";
+import DateChart from "../../Component/DateChart/DateChart";
 
 
 function Home() {
@@ -28,8 +31,7 @@ function Home() {
 
   return (
     <div className={theme === "light" ? "Maincontainer" : "Maincontainer-dark"}>
-      <div className="FirstColumn">
-      <PersistentDrawerLeft
+      {/* <PersistentDrawerLeft
         value_Application={value_Application}
         setValue_Application={setValue_Application}
         value_Week_DD={value_Week_DD}
@@ -46,10 +48,27 @@ function Home() {
         setSelectedOption={setSelectedOption}
         selectedOptions = {selectedOptions}
         setSelectedOptions = {setSelectedOptions}
-      />
-       </div>
+      /> */}
         <div className="Inner">
-                <header
+        <Navbar 
+       value_Application={value_Application}
+       setValue_Application={setValue_Application}
+       value_Week_DD={value_Week_DD}
+       setValue_Week={setValue_Week}
+       value_Month={value_Month}
+       setValue_Month={setValue_Month}
+       value_Year={value_Year}
+       setValue_Year={setValue_Year}
+       dates={dates}
+       setDates={setDates}
+       open={open}
+       setOpen={setOpen}
+       selectedOption={selectedOption}
+       setSelectedOption={setSelectedOption}
+       selectedOptions = {selectedOptions}
+       setSelectedOptions = {setSelectedOptions}
+/>
+      <div
         className={
           open ||
           value_Application ||
@@ -62,7 +81,7 @@ function Home() {
       >
         <Header open={open} setOpen={setOpen} />
         <Features data-aos="fade-up" />
-      </header>
+        </div>
 
       {open!=="" ?
       (<div className="GraphLayout"> 
@@ -88,15 +107,14 @@ function Home() {
         />
 
           <div className="ThirdRow">
+            {/* <ChartTest /> */}
        
         {/* <BasicTable
           value_Application={value_Application}
-          value_Week_DD={value_Week_DD}
-          value_Month={value_Month}
-          value_Year={value_Year}
+          selectedOption={selectedOption}
+          setSelectedOption={setSelectedOption}
           dates={dates}
         /> */}
-
 
         </div>
         

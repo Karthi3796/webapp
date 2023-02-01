@@ -67,6 +67,8 @@
     background-color: white;
     width: 45%;
     height: 45vh;
+    margin-top: 20px;
+    margin-left: 40px;
 }
 
 .graph4{
@@ -74,4 +76,35 @@
     margin-left: 10px;
     width: 45%;
     height: 45vh;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
+
+.OverallC{
+    background-color: white;
+    margin-left: 20px;
+    margin-top: 40px;
+    width: 95%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    /* margin-top: 60px; */
+    
+}
+
+.FullScreen {
+   
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-left: 85%;
+    margin-top: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+    transition: all 0.2s;
+  }
+  
+  .FullScreen:hover {
+    background-color: lightblue;
+  }

@@ -31,9 +31,4 @@ export const COLUMNS = [
         accessor: 'Week',
         Filter: ColumnFilter
     },
-    {
-        Header: 'Count',
-        accessor: 'Count',
-        Filter: ColumnFilter
-    }
   ]

@@ -34,7 +34,7 @@ const Header = ( {open, setOpen} ) => {
             {/* <span>Generation</span> */}
             {/* <span>messaging system</span> */}
           </h1>
-          <button  text={"Get Started"} onClick={open_close_func} className= "button" >Get Started</button>
+          {/* <button  text={"Get Started"} onClick={open_close_func} className= "button" >Get Started</button> */}
           <p className="u-text-small">
             Licence Report contains information about the usage of licenses by users based on modules or applications
           </p>

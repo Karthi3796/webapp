@@ -2,7 +2,6 @@ import "./StackedChart.css"
 import {React, useState} from "react"
 import datas from '../Daily/SourceData.json';
 import Trends from "../Trend/License.json";
-import { useRef } from 'react';
 import { Doughnut } from "react-chartjs-2";
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import ChartPluginStacked100 from "chartjs-plugin-stacked100";
@@ -32,34 +31,110 @@ ChartJS.register(
     ChartPluginStacked100,
 );
 
-
-
-
-
-
 const StackedChart = ({value_Application,value_Year, selectedOption, selectedOptions})=>{
 
     let arrCount = [];
     let arrMonth = [];
-    console.log(selectedOption)
-    // console.log('label',label.indexOf(29))
+    let arrayOfSetOfUserFirst = [];  
+    let arrYearFirst = [];
+    let moduleUserlist = {};
+if ((selectedOption.name == 'Today' || selectedOption.name == 'Yesterday') && selectedOption.value.length !== 0)
+{
+
+
+    const startTime = 0; // Set the starting time for the day (Railway time: hour of the day)
+
+    // Getting today's date
+    const today = new Date();
+    // Setting the start time of the day
+    today.setHours(startTime,0,0,0);
+
+    // Getting date and time after 24 hrs
+    const tomorrow = new Date();
+    tomorrow.setHours(startTime,0,0,0)
+    tomorrow.setDate(tomorrow.getDate()+ 1);
+
+    // Getting date and time before 24 hrs
+    const Yesterday = new Date();
+    Yesterday.setHours(startTime,0,0,0)
+    Yesterday.setDate(Yesterday.getDate() - 1);
+
+    // Defining start date time
+    let startDateTime= today;
+    // Defining end date time
+    let endDateTime= tomorrow;
+    if (selectedOption.name == 'Yesterday')
+    {
+          // Defining start date time
+    startDateTime= Yesterday;
+    // Defining end date time
+    endDateTime= today;
+    }
+    
+    // Check if the selected Data range option is today or yesterday
+    if((selectedOption.name == 'Today' || selectedOption.name == 'Yesterday') &&  selectedOption.value.length !== 0 )
+    {
+      // Iterating the elements in data json file
+      datas.forEach( (e) => 
+      {
+        // Get the date from Date column and Time from the time column and combain it to single value
+        let foundDate = e.Date.split("-");
+        let foundTime = e.Time.split(":");
+        let foundDateTime = foundDate.concat(foundTime);
+        foundDateTime = new Date(foundDateTime[0], foundDateTime[1]-1, foundDateTime[2], foundDateTime[3], foundDateTime[4], foundDateTime[5]);
+
+        // Check if the Applicaton matches and if (tomorrow > foundDateTime > today) 
+        console.log(startDateTime)
+        console.log(foundDateTime)
+        console.log(endDateTime)
+        if(e.Application === value_Application && foundDateTime >= startDateTime && foundDateTime <= endDateTime)
+        {
+          console.log("entered")
+          // check if the moduleUserlist has the found mould object already, if not adds the new key and creates a list.  
+          if (!(e.Module in moduleUserlist))
+          {
+            arrYearFirst.push(e.Module)
+            moduleUserlist[e.Module] = [e.User];
+          }
+          else
+          {
+            // Checks if the user is already present in the value represented by the key of moduleUserlist
+            if (! moduleUserlist[e.Module].includes(e.User))
+            {
+              moduleUserlist[e.Module].push(e.User)
+            }
+          }
+        }
+      })
+    }
+
+
+// store the length of the values of the keys of moduleUserlist
+    for (const value in moduleUserlist)
+    {
+      arrayOfSetOfUserFirst.push(moduleUserlist[value].length);
+    }
+console.log(moduleUserlist);
+console.log(arrayOfSetOfUserFirst);
+
+}
+
+
+else
+{
+    // console.log(selectedOption.name)
     if(selectedOption.value.length!==0){
     selectedOption.value.forEach((v, i)=>{
       datas.forEach((e)=>{
-        
         if(e.Application===value_Application){ 
-            if(e[selectedOption.name]===v && e.Year === selectedOption.Year[i]){
-                console.log("in")
+            if(e[selectedOption.name]===v && e.Year === selectedOption.Year[i]){  
+
               const present = arrMonth.some((data)=>{
                 return data===e.Module;
               })
               if(!present){
                 arrMonth.push(e.Module);
               }
-              console.log("Vanakam da ", arrMonth)
-                    
-                    arrCount.push(e.Count);
-
             }
           
         }
@@ -69,15 +144,14 @@ const StackedChart = ({value_Application,value_Year, selectedOption, selectedOpt
 
    
 // #########################
-console.log(arrMonth)
-let arrayOfSetOfUserFirst=[];
+
+
 
 // let arrYearFirst = arrMonth;
-let arrYearFirst = arrMonth
-console.log(arrYearFirst)
+arrYearFirst = arrMonth
 arrYearFirst.forEach((value1,i)=>{
   let setOfUserFirst=[];
-//   console.log(value1)
+  //  console.log(value1)
     datas.forEach((e)=>{
      if (e.Application === value_Application && value1=== e.Module) {
         selectedOption.value.forEach((v,i)=>{
@@ -93,14 +167,12 @@ arrYearFirst.forEach((value1,i)=>{
     })
  
   //  arrModUser = null;
-     console.log(value1)
-    // console.log(setOfUser.length)
-    console.log(setOfUserFirst)
+
     arrayOfSetOfUserFirst.push(setOfUserFirst.length)
    
 })
 
-console.log("arrayofSetUser",arrayOfSetOfUserFirst)
+}
 
 // ########################
 
@@ -128,12 +200,27 @@ for (var j = 0; j < LicModule.length; j++) {
         match = true;
         newArrayFirst.push(LicModule[j])
         TotalLicCountFirst.push(LiCount[j])
+        // newArrayFirst.push(LiCount[j])
        
     }   
 }  
 }
 
-// console.log(newArrayFirst)
+console.log("ModuleName",newArrayFirst)
+console.log("Module_TotalCount", TotalLicCountFirst)
+
+// #########
+let array1 = newArrayFirst;
+let array2 = TotalLicCountFirst;
+
+let ModuleName_with_Count = array1.map((element1, index) => {
+  let element2 = array2[index];
+  return `${element1}(${element2})`;
+});
+
+console.log(ModuleName_with_Count); 
+
+// #########
 
 // let PCount = [];
 let CountTotal = [];
@@ -145,8 +232,8 @@ for (var t = 0; t < newArrayFirst.length; t++) {
     // PCount[t] = ((arrayOfSetOfUserFirst[t]/TotalLicCountFirst[t])*100).toFixed(0);
 }
 
-console.log(RCountFirst)
-console.log("newArrayFirst",newArrayFirst)
+// console.log(RCountFirst)
+// console.log("newArrayFirst",newArrayFirst)
 
 // var len = newArrayFirst.length;
 // for (var i = 0; i < len; i++) {
@@ -172,7 +259,7 @@ console.log("newArrayFirst",newArrayFirst)
 // var Cused = [newWeekCount, RCountFirst];
 
 const data_WeekFirst = {
-    labels: newArrayFirst,
+    labels: ModuleName_with_Count,
     gridLines: {
       drawOnChartArea: false
   },
@@ -303,7 +390,7 @@ const data_WeekFirst = {
           },
           title: {
             display: true,
-            text: "Yearly Report",
+            text: selectedOption.name,
             color: "black",
           },
         },
@@ -337,25 +424,108 @@ const data_WeekFirst = {
   
 
 // ############################ Second Graph #################################
-
-
+let arrayOfSetOfUser=[];
+let arrModUser1 = [];
+let arrUserModuleCount = [];
 let arrYear = [];
+let moduleUserlistFirst = [];
 
-if(selectedOption.value.length!==0){
+if ((selectedOption.name == 'Today' || selectedOption.name == 'Yesterday') && selectedOption.value.length !== 0)
+{
+
+
+    const startTime = 0; 
+
+   
+    const today = new Date();
+   
+    today.setHours(startTime,0,0,0);
+
+   
+    const tomorrow = new Date();
+    tomorrow.setHours(startTime,0,0,0)
+    tomorrow.setDate(tomorrow.getDate()+ 1);
+
+    // Getting date and time before 24 hrs
+    const Yesterday = new Date();
+    Yesterday.setHours(startTime,0,0,0)
+    Yesterday.setDate(Yesterday.getDate() - 1);
+
+  
+    let startDateTime= today;
+   
+    let endDateTime= tomorrow;
+    if (selectedOption.name == 'Yesterday')
+    {
+          
+    startDateTime= Yesterday;
+    
+    endDateTime= today;
+    }
+    
+    
+    if((selectedOption.name == 'Today' || selectedOption.name == 'Yesterday') &&  selectedOption.value.length !== 0 )
+    {
+
+
+     
+      datas.forEach( (e) => 
+      {
+       
+        let foundDate = e.Date.split("-");
+        let foundTime = e.Time.split(":");
+        let foundDateTime = foundDate.concat(foundTime);
+        foundDateTime = new Date(foundDateTime[0], foundDateTime[1]-1, foundDateTime[2], foundDateTime[3], foundDateTime[4], foundDateTime[5]);
+
+      
+        if(e.Application === value_Application && foundDateTime >= startDateTime && foundDateTime <= endDateTime)
+        {
+          
+          if (!(e.Module in moduleUserlistFirst))
+          {
+            arrYear.push(e.Module)
+            moduleUserlistFirst[e.Module] = [e.User];
+          }
+          else
+          {
+           
+            if (! moduleUserlistFirst[e.Module].includes(e.User))
+            {
+              moduleUserlistFirst[e.Module].push(e.User)
+            }
+          }
+        }
+      })
+    }
+
+
+
+    for (const value in moduleUserlistFirst)
+    {
+      arrayOfSetOfUser.push(moduleUserlistFirst[value].length);
+    }
+console.log(moduleUserlistFirst);
+console.log(arrayOfSetOfUser);
+
+}
+
+else 
+{
+if(selectedOption.value.length !== 0){
     selectedOption.value.forEach((v, i)=>{
       datas.forEach((e)=>{
         
         if(e.Application===value_Application){ 
-            console.log(e[selectedOption.name]===v )
+            // console.log(e[selectedOption.name]===v )
             if(e[selectedOption.name]===v && e.Year === selectedOption.Year[i]){
-                console.log("in")
+               
               const present = arrYear.some((data)=>{
                 return data===e.Module;
               })
               if(!present){
                 arrYear.push(e.Module);
               }
-              console.log("Vanakam da ", arrYear)
+          
                     
                     arrCount.push(e.Count);
 
@@ -366,10 +536,6 @@ if(selectedOption.value.length!==0){
     })
     }
 // #########################
-
-let arrayOfSetOfUser=[];
-let arrModUser1 = [];
-let arrUserModuleCount = [];
 
 
 arrYear.forEach((value1,i)=>{
@@ -391,15 +557,14 @@ arrYear.forEach((value1,i)=>{
     })
  
   //  arrModUser = null;
-     console.log(value1)
+    //  console.log(value1)
     // console.log(setOfUser.length)
-    console.log(setOfUser)
+    // console.log(setOfUser)
     arrayOfSetOfUser.push(setOfUser.length)
    
 })
 
-console.log("arrayofSetUser",arrayOfSetOfUser)
-
+}
 
 // ########################
 
@@ -602,7 +767,7 @@ datasets: [
       },
       title: {
         display: true,
-        text: "Yearly Report",
+        text: selectedOption.name,
         color: "black",
       },
     },
@@ -654,24 +819,30 @@ const toggleTab = (index) => {
 
 // ###############################
 
-
 // #############################
     return(
       <>
 {/* {selectedOptions[0].value === "Stacked100% Chart"  ? */}
-(<div className="tainer">
+{ (value_Application == "Teamcenter" || value_Application === "Tc-VisMockup")?
+
+(<div>
+    
+
+<div
+  className="tainer">
       <div className="bloc-tabs">
+        
         <button
           className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
           onClick={() => toggleTab(1)}
         >
-          Used Module
+          Used Modules
         </button>
         <button
           className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
           onClick={() => toggleTab(2)}
         >
-         All Module
+         All Modules
         </button>
       </div>
 
@@ -679,9 +850,9 @@ const toggleTab = (index) => {
         <div
           className={toggleState === 1 ? "content  active-content" : "content"}
         >
-          {value_Year!==''&&value_Application!=="" ?
+          {value_Application!=="" ?
             (<div className="Outer">  
-           <div className={theme==="light"?'Layer1':'WeeklyReport-dark'} >  
+           <div   className={theme==="light"?'Layer1':'WeeklyReport-dark'} >  
             { !(arrayOfSetOfUserFirst.length === 0 && arrYearFirst.length === 0) ? 
            (
               <Bar 
@@ -697,7 +868,7 @@ const toggleTab = (index) => {
         <div
           className={toggleState === 2 ? "content  active-content" : "content"}
         >
-                     {value_Year!==''&&value_Application!=="" ?
+                     {value_Application!=="" ?
             (<div className="OutSide">  
            <div className={theme==="light"?'WeeklyReport':'WeeklyReport-dark'} >  
             { !(arrayOfSetOfUser.length === 0 && arrYear.length === 0) ? 
@@ -713,10 +884,9 @@ const toggleTab = (index) => {
         </div>
 
       </div>
-    </div>)
+    </div>
+    </div>):""}
     </>
-
-
         
     )
     

@@ -514,7 +514,6 @@ export default function PersistentDrawerLeft({
         <DrawerHeader>
           <div className="nav-brand">
             <img src="icon/mavenberg.png" alt="" srcset="" />
-            {/* <h2>Mavenberg</h2> */}
           </div>
           {/* <IconButton className='BBt' onClick={handleDrawerClose} sx={{color:"#757470"}}>
         
@@ -551,6 +550,7 @@ export default function PersistentDrawerLeft({
                 <option value="Last Quater">Last Quarter</option>
                 <option value="Last 6Months">Last 6 Month</option>
                 <option value="Last 6Years">Last 6 Year</option>
+                <option value="Last 6Years">Custom Range </option>
               </select>
             </div>
           </div>

@@ -1,8 +1,9 @@
-import React from 'react';
+import {React, useState} from 'react';
 import "./FourBlockChart.css";
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import datas from "../Daily/SourceData.json";
 import Trends from "../Trend/License.json";
+import { useRef } from 'react';
 import {
   Chart as ChartJS,
   ArcElement,
@@ -40,7 +41,90 @@ const FourBlockChart = ({value_Application, selectedOption})=>{
   
     let arrCount = [];
     let arrMonth = [];
+    let arrYear = [];
+    let arrayOfSetOfUser=[];
+    let moduleUserlist = {};
     // console.log('label',label.indexOf(29))
+    if ((selectedOption.name == 'Today' || selectedOption.name == 'Yesterday') && selectedOption.value.length !== 0)
+    {
+    
+    
+        const startTime = 0; // Set the starting time for the day (Railway time: hour of the day)
+    
+        // Getting today's date
+        const today = new Date();
+        // Setting the start time of the day
+        today.setHours(startTime,0,0,0);
+    
+        // Getting date and time after 24 hrs
+        const tomorrow = new Date();
+        tomorrow.setHours(startTime,0,0,0)
+        tomorrow.setDate(tomorrow.getDate()+ 1);
+    
+        // Getting date and time before 24 hrs
+        const Yesterday = new Date();
+        Yesterday.setHours(startTime,0,0,0)
+        Yesterday.setDate(Yesterday.getDate() - 1);
+    
+        // Defining start date time
+        let startDateTime= today;
+        // Defining end date time
+        let endDateTime= tomorrow;
+        if (selectedOption.name == 'Yesterday')
+        {
+              // Defining start date time
+        startDateTime= Yesterday;
+        // Defining end date time
+        endDateTime= today;
+        }
+        
+        // Check if the selected Data range option is today or yesterday
+        if((selectedOption.name == 'Today' || selectedOption.name == 'Yesterday') &&  selectedOption.value.length !== 0 )
+        {
+    
+    
+          // Iterating the elements in data json file
+          datas.forEach( (e) => 
+          {
+            // Get the date from Date column and Time from the time column and combain it to single value
+            let foundDate = e.Date.split("-");
+            let foundTime = e.Time.split(":");
+            let foundDateTime = foundDate.concat(foundTime);
+            foundDateTime = new Date(foundDateTime[0], foundDateTime[1]-1, foundDateTime[2], foundDateTime[3], foundDateTime[4], foundDateTime[5]);
+    
+            // Check if the Applicaton matches and if (tomorrow > foundDateTime > today) 
+            if(e.Application === value_Application && foundDateTime >= startDateTime && foundDateTime <= endDateTime)
+            {
+              // check if the moduleUserlist has the found mould object already, if not adds the new key and creates a list.  
+              if (!(e.Module in moduleUserlist))
+              {
+                arrYear.push(e.Module)
+                moduleUserlist[e.Module] = [e.User];
+              }
+              else
+              {
+                // Checks if the user is already present in the value represented by the key of moduleUserlist
+                if (! moduleUserlist[e.Module].includes(e.User))
+                {
+                  moduleUserlist[e.Module].push(e.User)
+                }
+              }
+            }
+          })
+        }
+    
+    
+    // store the length of the values of the keys of moduleUserlist
+        for (const value in moduleUserlist)
+        {
+          arrayOfSetOfUser.push(moduleUserlist[value].length);
+        }
+    console.log(moduleUserlist);
+    console.log(arrayOfSetOfUser);
+    
+    }
+
+  else {
     if(selectedOption.value.length!==0){
     selectedOption.value.forEach((v, i)=>{
       datas.forEach((e)=>{
@@ -60,17 +144,15 @@ const FourBlockChart = ({value_Application, selectedOption})=>{
 
    
 // #########################
-let arrayOfSetOfUser=[];
+
 // let arrYearFirst = arrMonth;
-let arrYear = arrMonth
+arrYear = arrMonth
 arrYear.forEach((value1,i)=>{
   let setOfUser=[];
-//   console.log(value1)
     datas.forEach((e)=>{
      if (e.Application === value_Application && value1=== e.Module) {
         selectedOption.value.forEach((v,i)=>{
             if(e[selectedOption.name]===v  && e.Year === selectedOption.Year[i]){
-      // if (e.Application === "Teamcenter" && e.Month === "December" && value1=== e.Module) {
                  if (!setOfUser.includes(e.User))
                         {
                         setOfUser.push(e.User);
@@ -80,19 +162,12 @@ arrYear.forEach((value1,i)=>{
     }
     })
  
-  //  arrModUser = null;
-    //  console.log(value1)
-    // // console.log(setOfUser.length)
-    // console.log(setOfUser)
     arrayOfSetOfUser.push(setOfUser.length)
-//     console.log(arrayOfSetOfUser)
 
-//     console.log(arrayOfSetOfUser);
-//    console.log("array_Year", arrYear);
    
 })
 
- // ########################
+}
 
 let LicModule = [];
 let LiCount = [];
@@ -215,7 +290,7 @@ console.log("RCOunt25",RCountModName100)
             },
             title: {
               display: true,
-              text: "0-25% Utilization",
+              text: "Utilization between (0 - 25%)",
               color: "black",
             },
           },
@@ -271,7 +346,7 @@ const data_TeamcenterSecond = {
         },
         title: {
           display: true,
-          text: "25%-50% Utilization",
+          text: "Utilization between (25% - 50%)",
           color: "black",
         },
       },
@@ -329,7 +404,7 @@ const data_TeamcenterThird = {
         },
         title: {
           display: true,
-          text: "50%-75% Utilization",
+          text: "Utilization between (50% - 75%)",
           color: "black",
         },
       },
@@ -441,46 +516,65 @@ const getLast6Months = () => {
   }
   console.log(getLast6Years());
   
-
-
-
-
-
-    let change_Teamcenter = [];
-    if( theme==="light"?'Utlity':'Utlity-dark'){
-      if( theme === 'dark'){
-        change_Teamcenter = data_Teamcenter.options_Teamcenter.plugins.legend.labels.color = 'white';
-      }
-    }
+  const chartContainer = useRef(null);
+  const [isFullScreen, setFullScreen] = useState(false);
+  
+  const toggleFullScreen = () => {
+    setFullScreen(!isFullScreen);
+  };
     return(
       <>
-      { (value_Application == "Teamcenter")?
-       (<div>       
+      {(value_Application == "Teamcenter" || value_Application === "Tc-VisMockup")?
+       (<div className='OverallC'> 
+         <button className="FullScreen" onClick={toggleFullScreen}>Fullscreen</button>      
         <div className='Two'>
-            <div className='graph3'>
+      
+            <div className='graph3'ref={chartContainer}
+ style={{
+   position: "relative",
+   width: isFullScreen ? "100%" : "50%",
+   height: isFullScreen ? "65vh" : "49vh"
+ }}  >
             <Bar
-              data={data_Teamcenter}
-              options={data_Teamcenter.options_Teamcenter}
+               data={data_TeamcenterFourth}
+               options={data_TeamcenterFourth.options_TeamcenterFourth}
             />
         </div>
-            <div className='graph4'>
+            <div className='graph4' ref={chartContainer}
+ style={{
+   position: "relative",
+   width: isFullScreen ? "98%" : "50%",
+   height: isFullScreen ? "65vh" : "49vh"
+ }}>
             <Bar
-              data={data_TeamcenterSecond}
-              options={data_TeamcenterSecond.options_Teamcentersecond}
+            data={data_TeamcenterThird}
+            options={data_TeamcenterThird.options_TeamcenterThird}
+           
+             
             />
             </div>
         </div> 
         <div className='Two1'>
-            <div className='graph3'>
+            <div className='graph3' ref={chartContainer}
+ style={{
+   position: "relative",
+   width: isFullScreen ? "98%" : "50%",
+   height: isFullScreen ? "65vh" : "49vh"
+ }}>
         <Bar
-              data={data_TeamcenterThird}
-              options={data_TeamcenterThird.options_TeamcenterThird}
+                data={data_TeamcenterSecond}
+                options={data_TeamcenterSecond.options_Teamcentersecond}
             />
         </div>
-            <div className='graph4'>
+            <div className='graph4' ref={chartContainer}
+ style={{
+   position: "relative",
+   width: isFullScreen ? "98%" : "50%",
+   height: isFullScreen ? "65vh" : "49vh"
+ }}>
             <Bar
-              data={data_TeamcenterFourth}
-              options={data_TeamcenterFourth.options_TeamcenterFourth}
+              data={data_Teamcenter}
+              options={data_Teamcenter.options_Teamcenter}
             />
             </div>
         </div> 
