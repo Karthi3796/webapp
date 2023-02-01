@@ -270,7 +270,7 @@ const getPreviousQuarterName = () => {
   let previousQuarterMonths = monthNames.slice(startMonth, endMonth + 1);
   let previousQuarterYear = currentYear - (endMonth === 11 ? 1 : 0);
   return {name: "Month", value: previousQuarterMonths, Year: [previousQuarterYear.toString()], option: "LastQuarter"};
-}
+} 
 
 console.log(getPreviousQuarterName());
     
