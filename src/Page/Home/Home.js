@@ -10,15 +10,14 @@ import LinegraphCustomRange from "../../Component/LineChart/LineChart";
 import StackedChart from "../../Component/StackedChart/StackedChart";
 import FourBlockChart from "../../Component/FourBlockerChart/FourBlockChart";
 import Navbar from "../../Component/Navbar/Navbar";
-import ChartTest from "../../Component/ChartTest/ChartTest";
-import DateChart from "../../Component/DateChart/DateChart";
-import CustomChart from "../../Component/CustomChart/CustomChart";
+
 
 
 function Home() {
   const { theme } = useContext(ThemeContext);
 
   const [selectedOption, setSelectedOption] = useState({name:"",value:[]});
+  const [dropdownvalue,setDropDownValue] = useState("");
   // const [selectedOption, setSelectedOption] = useState({name:"Year",value:["2022"]});
   const [value_Application, setValue_Application] = useState("");
   const [selectedOptions, setSelectedOptions] = useState("");
@@ -69,6 +68,8 @@ function Home() {
        setSelectedOption={setSelectedOption}
        selectedOptions = {selectedOptions}
        setSelectedOptions = {setSelectedOptions}
+       dropdownvalue = {dropdownvalue}
+       setDropDownValue = {setDropDownValue}
 />
       <div
         className={
@@ -94,18 +95,24 @@ function Home() {
             setValue_Application={setValue_Application}
             selectedOptions = {selectedOptions}
             setSelectedOptions = {setSelectedOptions}
+            dropdownvalue = {dropdownvalue}
+            setDropDownValue = {setDropDownValue}
            />
-            <LinegraphCustomRange 
+        <LinegraphCustomRange 
         selectedOption={selectedOption}
         setSelectedOption={setSelectedOption}
         value_Application={value_Application}
         setValue_Application={setValue_Application}
+        dropdownvalue = {dropdownvalue}
+        setDropDownValue = {setDropDownValue}
         /> 
         <FourBlockChart
        selectedOption={selectedOption}
        setSelectedOption={setSelectedOption}
        value_Application={value_Application}
        setValue_Application={setValue_Application}
+       dropdownvalue = {dropdownvalue}
+       setDropDownValue = {setDropDownValue}
         />
 
           <div className="ThirdRow">

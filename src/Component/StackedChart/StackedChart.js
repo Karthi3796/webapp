@@ -31,7 +31,7 @@ ChartJS.register(
     ChartPluginStacked100,
 );
 
-const StackedChart = ({value_Application,value_Year, selectedOption, selectedOptions})=>{
+const StackedChart = ({value_Application,value_Year, selectedOption, dropdownvalue})=>{
 
     let arrCount = [];
     let arrMonth = [];
@@ -39,63 +39,267 @@ const StackedChart = ({value_Application,value_Year, selectedOption, selectedOpt
     let arrYearFirst = [];
     let moduleUserlist = {};
 
-    console.log(selectedOption)
+    // ############################ Second Graph #################################
+    let arrayOfSetOfUser=[];
+    let arrModUser1 = [];
+    let arrUserModuleCount = [];
+    let arrYear = [];
+    let moduleUserlistFirst = [];
 
-if ((selectedOption.name == 'Today' || selectedOption.name == 'Yesterday' || selectedOption.name == "Custom Range") && selectedOption.value.length !== 0 )
+if (selectedOption.option !== undefined )
 {
 
 
-    const startTime = 0; // Set the starting time for the day (Railway time: hour of the day)
+  let startDateTime     = null; // The starting date and time for the selected date range option
+  let endDateTime       = null; // The end date and time for the selected date range option
 
-    // Getting today's date
-    const today = new Date();
-    // Setting the start time of the day
-    today.setHours(startTime,0,0,0);
+  //Options:
+  // Label : Hours
+  const OptionToday= "Today"
+  const OptionYesterday= "Yesterday"
+  // Label : Days of the week
+  const OptionThisWeek= "ThisWeek"
+  const OptionLastWeek= "LastWeek"
+  // Label : Weeks of the month
+  const OptionThisMonth= "ThisMonth"
+  const OptionLastMonth= "LastMonth"
+  // Label : Months of the year
+  const OptionLastYear= "LastYear"
+  const OptionThisYear= "ThisYear"
+  const OptionLastQuarter= "LastQuarter"
+  const OptionThisQuarter= "ThisQuarter"
+  const OptionLast5Month= "Last5Month"
+  // Label : Years
+  const OptionLast5Year= "Last5Year"
 
-    // Getting date and time after 24 hrs
-    const tomorrow = new Date();
-    tomorrow.setHours(startTime,0,0,0)
-    tomorrow.setDate(tomorrow.getDate()+ 1);
+  // Getting today's date
+  const today = new Date();
+  // Setting the start time of the day (Hours, Minutes, Seconds, MicroSeconds)
+  today.setHours(0,0,0,0);
 
-    // Getting date and time before 24 hrs
-    const Yesterday = new Date();
-    Yesterday.setHours(startTime,0,0,0)
-    Yesterday.setDate(Yesterday.getDate() - 1);
 
-    // Defining start date time
-    let startDateTime= today;
-    // Defining end date time
-    let endDateTime= tomorrow;
-    if (selectedOption.name == 'Today')
-    {
-          // Defining start date time
-     startDateTime= today;
-    // Defining end date time
-     endDateTime= tomorrow;
-    }
+  // Calculation of start and end Date time and label selection based on the slected option
 
-    else if (selectedOption.name == 'Yesterday')
-    {
-          // Defining start date time
-    startDateTime= Yesterday;
-    // Defining end date time
-    endDateTime= today;
-    }
+  if (selectedOption.option == OptionToday )
+  {
+
+    // Calculating start date time
+    startDateTime= new Date(today.valueOf());
+
+    // Calculating end date time
+    endDateTime = new Date(startDateTime.valueOf());
+    endDateTime.setDate(endDateTime.getDate()+1);
+    endDateTime.setSeconds(-1);
+
+    // Writting to the console, the start and end date time
+    console.log(startDateTime);
+    console.log(endDateTime);
+
+  }
+
+  else if (selectedOption.option == OptionYesterday)
+  {
+     // Calculating start date time
+    startDateTime = new Date(today.valueOf());
+    startDateTime.setDate(startDateTime.getDate()-1);
+
+    // Calculating end date time
+    endDateTime= new Date(today.valueOf());
+    endDateTime.setSeconds(-1);
+
+    // Writting to the console, the start and end date time
+    console.log(startDateTime);
+    console.log(endDateTime);
+
+  }
+
+  else if (selectedOption.option == OptionThisWeek)
+  {
+    // Calculating start date time
+    startDateTime = new Date(today.valueOf());
+    startDateTime.setDate(startDateTime.getDate()-startDateTime.getDay());
+
+    // Calculating end date time
+    endDateTime = new Date(startDateTime.valueOf());
+    endDateTime.setDate(endDateTime.getDate() + 7);
+    endDateTime.setSeconds(-1);
+
+    // Writting to the console, the start and end date time
+    console.log(startDateTime);
+    console.log(endDateTime);
+  }
+
+  else if (selectedOption.option == OptionLastWeek)
+  {
+   // Calculating start date time
+    startDateTime = new Date(today.valueOf());
+    startDateTime.setDate(startDateTime.getDate()-startDateTime.getDay());
+    startDateTime.setDate(startDateTime.getDate()-7);
+
+    // Calculating end date time
+    endDateTime = new Date(startDateTime.valueOf());
+    endDateTime.setDate(endDateTime.getDate() + 7);
+    endDateTime.setSeconds(-1);
+
+    // Writting to the console, the start and end date time
+    console.log(startDateTime);
+    console.log(endDateTime);
+  }
+
+  else if (selectedOption.option == OptionThisMonth)
+  { 
+    // Calculating start date time
+    startDateTime = new Date(today.valueOf());
+    startDateTime.setDate(1);
+
+    // Calculating end date time
+    endDateTime = new Date(startDateTime.valueOf());
+    endDateTime.setMonth(endDateTime.getMonth() + 1);
+    endDateTime.setSeconds(-1);
+
+    // Writting to the console, the start and end date time
+    console.log(startDateTime);
+    console.log(endDateTime);
+
+  }
+
+  else if (selectedOption.option == OptionLastMonth)
+  {
+    // Calculating start date time
+    startDateTime = new Date(today.valueOf());
+    startDateTime.setDate(1);
+    startDateTime.setMonth(startDateTime.getMonth()-1);
+
+    // Calculating end date time
+    endDateTime = new Date(startDateTime.valueOf());
+    endDateTime.setMonth(endDateTime.getMonth() + 1);
+    endDateTime.setSeconds(-1);
+
+    // Writting to the console, the start and end date time
+    console.log(startDateTime);
+    console.log(endDateTime);
+
+  }
+
+  else if (selectedOption.option == OptionLastYear)
+  {
+    // Calculating start date time
+    startDateTime = new Date(today.getFullYear()-1,0,1,0,0,0,0);
+
+    // Calculating end date time
+    endDateTime = new Date(today.getFullYear(),0,1,0,0,0,0);
+    endDateTime.setSeconds(-1);
+
+    // Writting to the console, the start and end date time
+    console.log(startDateTime);
+    console.log(endDateTime);
+
+  }
+
+  else if (selectedOption.option == OptionThisYear)
+  {
+    // Calculating start date time
+    startDateTime = new Date(today.getFullYear(),0,1,0,0,0,0);
+    
+    // Calculating end date time
+    endDateTime = new Date(today.getFullYear()+1,0,1,0,0,0,0);
+    endDateTime.setSeconds(-1);
+
+    // Writting to the console, the start and end date time
+    console.log(startDateTime);
+    console.log(endDateTime);
+
+  }
+
+  else if (selectedOption.option == OptionLastQuarter)
+  { 
+    // Calculating start date time
+    startDateTime = new Date(today.valueOf());
+    startDateTime.setDate(1);
+    let currentQuarter = Math.floor(startDateTime.getMonth()/3);
+    startDateTime.setMonth(currentQuarter * 3);
+    startDateTime.setMonth(startDateTime.getMonth()-3);
+
+    // Calculating end date time
+    endDateTime = new Date(startDateTime.valueOf());
+    endDateTime.setMonth(endDateTime.getMonth()+3);
+    endDateTime.setSeconds(-1);
+
+    // Writting to the console, the start and end date time
+    console.log(startDateTime);
+    console.log(endDateTime);
+
+  }
+
+  else if (selectedOption.option == OptionThisQuarter)
+  {
+    // Calculating start date time
+    startDateTime = new Date(today.valueOf());
+    startDateTime.setDate(1);
+    let currentQuarter = Math.floor(startDateTime.getMonth()/3);
+    startDateTime.setMonth(currentQuarter * 3);
+    startDateTime.setMonth(startDateTime.getMonth());
+
+    // Calculating end date time
+    endDateTime = new Date(startDateTime.valueOf());
+    endDateTime.setMonth(endDateTime.getMonth()+3);
+    endDateTime.setSeconds(-1);
+
+    // Writting to the console, the start and end date time
+    console.log(startDateTime);
+    console.log(endDateTime);
+
+  }
+
+  else if (selectedOption.option == OptionLast5Month)
+  {
+    // Calculating start date time
+    startDateTime = new Date(today.valueOf());
+    startDateTime.setMonth(startDateTime.getMonth()-4);
+
+    // Calculating end date time
+    endDateTime = new Date(startDateTime.valueOf());
+    endDateTime.setMonth(endDateTime.getMonth()+5);
+    endDateTime.setSeconds(-1);
+
+     // Writting to the console, the start and end date time
+    console.log(startDateTime);
+    console.log(endDateTime);
+
+  }
+
+  else if (selectedOption.option == OptionLast5Year)
+  {
+    // Calculating start date time
+    startDateTime = new Date(today.getFullYear()-4,0,1,0,0,0);
+
+    // Calculating end date time
+    endDateTime = new Date(today.getFullYear()+1,0,1,0,0,0);
+    endDateTime.setSeconds(-1);
+
+    // Writting to the console, the start and end date time
+    console.log(startDateTime);
+    console.log(endDateTime);
+
+  }
     else if (selectedOption.name == "Custom Range")
     {
+      // Calculating start date time
       startDateTime =  new Date(selectedOption.fromDate);
       startDateTime.setHours(0,0,0,0);
+
+      // Calculating end date time
       endDateTime= new Date(selectedOption.toDate);
       endDateTime.setDate(endDateTime.getDate()+1);
       endDateTime.setSeconds(-1);
+
+      // Writting to the console, the start and end date time
       console.log("StartDate",startDateTime);
       console.log("EndDate",endDateTime)
 
     }
     
-    // Check if the selected Data range option is today or yesterday
-    if((selectedOption.name == 'Today' || selectedOption.name == 'Yesterday' || selectedOption.name == "Custom Range") &&  selectedOption.value.length !== 0 )
-    {
+
       // Iterating the elements in data json file
       datas.forEach( (e) => 
       {
@@ -128,73 +332,54 @@ if ((selectedOption.name == 'Today' || selectedOption.name == 'Yesterday' || sel
           }
         }
       })
-    }
 
 
-// store the length of the values of the keys of moduleUserlist
+    // store the length of the values of the keys of moduleUserlist
     for (const value in moduleUserlist)
     {
       arrayOfSetOfUserFirst.push(moduleUserlist[value].length);
     }
-console.log(moduleUserlist);
-console.log(arrayOfSetOfUserFirst);
+    console.log(moduleUserlist);
+    console.log(arrayOfSetOfUserFirst);
 
-}
+    // Second graph data extraction
+    datas.forEach( (e) => 
+    {
+      
+      let foundDate = e.Date.split("-");
+      let foundTime = e.Time.split(":");
+      let foundDateTime = foundDate.concat(foundTime);
+      foundDateTime = new Date(foundDateTime[0], foundDateTime[1]-1, foundDateTime[2], foundDateTime[3], foundDateTime[4], foundDateTime[5]);
 
-
-else
-{
-    // console.log(selectedOption.name)
-    if(selectedOption.value.length!==0){
-    selectedOption.value.forEach((v, i)=>{
-      datas.forEach((e)=>{
-        if(e.Application===value_Application){ 
-            if(e[selectedOption.name]===v && e.Year === selectedOption.Year[i]){  
-
-              const present = arrMonth.some((data)=>{
-                return data===e.Module;
-              })
-              if(!present){
-                arrMonth.push(e.Module);
-              }
-            }
-          
+    
+      if(e.Application === value_Application && foundDateTime >= startDateTime && foundDateTime <= endDateTime)
+      {
+        
+        if (!(e.Module in moduleUserlistFirst))
+        {
+          arrYear.push(e.Module)
+          moduleUserlistFirst[e.Module] = [e.User];
         }
-      });
-    })
-    }
-
-   
-// #########################
-
-
-
-// let arrYearFirst = arrMonth;
-arrYearFirst = arrMonth
-arrYearFirst.forEach((value1,i)=>{
-  let setOfUserFirst=[];
-  //  console.log(value1)
-    datas.forEach((e)=>{
-     if (e.Application === value_Application && value1=== e.Module) {
-        selectedOption.value.forEach((v,i)=>{
-            if(e[selectedOption.name]===v  && e.Year === selectedOption.Year[i]){
-      // if (e.Application === "Teamcenter" && e.Month === "December" && value1=== e.Module) {
-                 if (!setOfUserFirst.includes(e.User))
-                        {
-                        setOfUserFirst.push(e.User);
-                        }
+        else
+        {
+          
+          if (! moduleUserlistFirst[e.Module].includes(e.User))
+          {
+            moduleUserlistFirst[e.Module].push(e.User)
+          }
+        }
       }
     })
+
+    for (const value in moduleUserlistFirst)
+    {
+      arrayOfSetOfUser.push(moduleUserlistFirst[value].length);
     }
-    })
- 
-  //  arrModUser = null;
-
-    arrayOfSetOfUserFirst.push(setOfUserFirst.length)
-   
-})
-
+    console.log(moduleUserlistFirst);
+    console.log(arrayOfSetOfUser);
 }
+
+
 
 // ########################
 
@@ -209,9 +394,6 @@ Trends.forEach((s) =>{
 
 })
 
-// console.log(LicModule);
-// console.log("arrYearFirst", LiCount);
-
 var newArrayFirst = [];
 var TotalLicCountFirst = [];
 
@@ -222,8 +404,6 @@ for (var j = 0; j < LicModule.length; j++) {
         match = true;
         newArrayFirst.push(LicModule[j])
         TotalLicCountFirst.push(LiCount[j])
-        // newArrayFirst.push(LiCount[j])
-       
     }   
 }  
 }
@@ -254,33 +434,11 @@ for (var t = 0; t < newArrayFirst.length; t++) {
     // PCount[t] = ((arrayOfSetOfUserFirst[t]/TotalLicCountFirst[t])*100).toFixed(0);
 }
 
-// console.log(RCountFirst)
-// console.log("newArrayFirst",newArrayFirst)
-
-// var len = newArrayFirst.length;
-// for (var i = 0; i < len; i++) {
-//     var match = false; 
-//     for (var j = 0; j < LicModule.length; j++) {
-//         if(!newArrayFirst.some((data)=> {return data===LicModule[j]})){
-//             if (newArrayFirst[i] != LicModule[j]) {
-//                 match = true;
-//                 newArrayFirst.push(LicModule[j])
-//                 RCountFirst.push(LiCount[j])
-//             }  
-//         }
-//     }  
-//     }
-
-
-// console.log("Newone",newArrayFirst)
-// console.log("NewOneCount",RCountFirst)
-
-
-
-
-// var Cused = [newWeekCount, RCountFirst];
 
 const data_WeekFirst = {
+  tooltips: {
+    enabled: false
+  },
     labels: ModuleName_with_Count,
     gridLines: {
       drawOnChartArea: false
@@ -328,9 +486,8 @@ const data_WeekFirst = {
           intersect: true
        },
        hover: {
-          mode: 'index',
-          intersect: true
-       },
+        mode: null
+      },
 
         colors: {
           enabled: false
@@ -372,8 +529,10 @@ const data_WeekFirst = {
           // tooltip: {
           //   enabled: false // <-- this option disables tooltips
           // },
+          datalabels:{
           anchor:"end",
           align:"top",
+          },
           plugins: [ChartPluginStacked100, ChartDataLabels],
           stacked100:{
             enable: true,
@@ -412,7 +571,7 @@ const data_WeekFirst = {
           },
           title: {
             display: true,
-            text: selectedOption.name,
+            text: dropdownvalue,
             color: "black",
           },
         },
@@ -443,169 +602,7 @@ const data_WeekFirst = {
           change_Teamcenter = option_WeekFirst.plugins.legend.labels.color = 'white';
         }
       }
-  
 
-// ############################ Second Graph #################################
-let arrayOfSetOfUser=[];
-let arrModUser1 = [];
-let arrUserModuleCount = [];
-let arrYear = [];
-let moduleUserlistFirst = [];
-
-if ((selectedOption.name == 'Today' || selectedOption.name == 'Yesterday' || selectedOption.name == "Custom Range") && selectedOption.value.length !== 0)
-{
-
-
-  const startTime = 0; // Set the starting time for the day (Railway time: hour of the day)
-
-  // Getting today's date
-  const today = new Date();
-  // Setting the start time of the day
-  today.setHours(startTime,0,0,0);
-
-  // Getting date and time after 24 hrs
-  const tomorrow = new Date();
-  tomorrow.setHours(startTime,0,0,0)
-  tomorrow.setDate(tomorrow.getDate()+ 1);
-
-  // Getting date and time before 24 hrs
-  const Yesterday = new Date();
-  Yesterday.setHours(startTime,0,0,0)
-  Yesterday.setDate(Yesterday.getDate() - 1);
-
-  // Defining start date time
-  let startDateTime= today;
-  // Defining end date time
-  let endDateTime= tomorrow;
-  if (selectedOption.name == 'Today')
-  {
-        // Defining start date time
-   startDateTime= today;
-  // Defining end date time
-   endDateTime= tomorrow;
-  }
-
-  else if (selectedOption.name == 'Yesterday')
-  {
-        // Defining start date time
-  startDateTime= Yesterday;
-  // Defining end date time
-  endDateTime= today;
-  }
-  else if (selectedOption.name == "Custom Range")
-  {
-    startDateTime =  new Date(selectedOption.fromDate);
-    startDateTime.setHours(0,0,0,0);
-    endDateTime= new Date(selectedOption.toDate);
-    endDateTime.setDate(endDateTime.getDate()+1);
-    endDateTime.setSeconds(-1);
-    console.log("StartDate",startDateTime);
-    console.log("EndDate",endDateTime)
-
-  }
-    
-    
-    if((selectedOption.name == 'Today' || selectedOption.name == 'Yesterday' || selectedOption.name == "Custom Range") &&  selectedOption.value.length !== 0 )
-    {
-
-
-     
-      datas.forEach( (e) => 
-      {
-       
-        let foundDate = e.Date.split("-");
-        let foundTime = e.Time.split(":");
-        let foundDateTime = foundDate.concat(foundTime);
-        foundDateTime = new Date(foundDateTime[0], foundDateTime[1]-1, foundDateTime[2], foundDateTime[3], foundDateTime[4], foundDateTime[5]);
-
-      
-        if(e.Application === value_Application && foundDateTime >= startDateTime && foundDateTime <= endDateTime)
-        {
-          
-          if (!(e.Module in moduleUserlistFirst))
-          {
-            arrYear.push(e.Module)
-            moduleUserlistFirst[e.Module] = [e.User];
-          }
-          else
-          {
-           
-            if (! moduleUserlistFirst[e.Module].includes(e.User))
-            {
-              moduleUserlistFirst[e.Module].push(e.User)
-            }
-          }
-        }
-      })
-    }
-
-
-
-    for (const value in moduleUserlistFirst)
-    {
-      arrayOfSetOfUser.push(moduleUserlistFirst[value].length);
-    }
-console.log(moduleUserlistFirst);
-console.log(arrayOfSetOfUser);
-
-}
-
-else 
-{
-if(selectedOption.value.length !== 0){
-    selectedOption.value.forEach((v, i)=>{
-      datas.forEach((e)=>{
-        
-        if(e.Application===value_Application){ 
-            // console.log(e[selectedOption.name]===v )
-            if(e[selectedOption.name]===v && e.Year === selectedOption.Year[i]){
-               
-              const present = arrYear.some((data)=>{
-                return data===e.Module;
-              })
-              if(!present){
-                arrYear.push(e.Module);
-              }
-          
-                    
-                    arrCount.push(e.Count);
-
-            }
-          
-        }
-      });
-    })
-    }
-// #########################
-
-
-arrYear.forEach((value1,i)=>{
-  let setOfUserFirst=[];
-  let setOfUser=[];
-//   console.log(value1)
-    datas.forEach((e)=>{
-     if (e.Application === value_Application && value1=== e.Module) {
-        selectedOption.value.forEach((v,i)=>{
-            if(e[selectedOption.name]===v  && e.Year === selectedOption.Year[i]){
-      // if (e.Application === "Teamcenter" && e.Month === "December" && value1=== e.Module) {
-                 if (!setOfUser.includes(e.User))
-                        {
-                        setOfUser.push(e.User);
-                        }
-      }
-    })
-    }
-    })
- 
-  //  arrModUser = null;
-    //  console.log(value1)
-    // console.log(setOfUser.length)
-    // console.log(setOfUser)
-    arrayOfSetOfUser.push(setOfUser.length)
-   
-})
-
-}
 
 // ########################
 
@@ -724,9 +721,8 @@ datasets: [
       intersect: true
    },
    hover: {
-      mode: 'index',
-      intersect: true
-   },
+    mode: null
+  },
 
     colors: {
       enabled: false
@@ -765,11 +761,10 @@ datasets: [
       },
     },
     plugins: {
-      // tooltip: {
-      //   enabled: false // <-- this option disables tooltips
-      // },
+      datalabels:{
       anchor:"end",
       align:"top",
+      },
       plugins: [ChartPluginStacked100, ChartDataLabels],
       stacked100:{
         enable: true,
@@ -808,7 +803,7 @@ datasets: [
       },
       title: {
         display: true,
-        text: selectedOption.name,
+        text: dropdownvalue,
         color: "black",
       },
     },

@@ -363,8 +363,8 @@ const TrendChart = ({ value_Application, value_Year }) => {
     data.datasets.push({
       label: arrModule[j],
       data: data6,
-      backgroundColor: palette[j+1],
-      borderColor:palette[j]
+      // backgroundColor: palette[j+1],
+      // borderColor:palette[j]
 
     });
   }

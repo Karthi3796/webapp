@@ -44,62 +44,258 @@ const FourBlockChart = ({value_Application, selectedOption})=>{
     let arrYear = [];
     let arrayOfSetOfUser=[];
     let moduleUserlist = {};
-    // console.log('label',label.indexOf(29))
-    if ((selectedOption.name == 'Today' || selectedOption.name == 'Yesterday' || selectedOption.name == "Custom Range") && selectedOption.value.length !== 0)
-    {
-    
-    
-      const startTime = 0; // Set the starting time for the day (Railway time: hour of the day)
+    if (selectedOption.option !== undefined )
+{
 
-      // Getting today's date
-      const today = new Date();
-      // Setting the start time of the day
-      today.setHours(startTime,0,0,0);
+
+  let startDateTime     = null; // The starting date and time for the selected date range option
+  let endDateTime       = null; // The end date and time for the selected date range option
+
+  //Options:
+  // Label : Hours
+  const OptionToday= "Today"
+  const OptionYesterday= "Yesterday"
+  // Label : Days of the week
+  const OptionThisWeek= "ThisWeek"
+  const OptionLastWeek= "LastWeek"
+  // Label : Weeks of the month
+  const OptionThisMonth= "ThisMonth"
+  const OptionLastMonth= "LastMonth"
+  // Label : Months of the year
+  const OptionLastYear= "LastYear"
+  const OptionThisYear= "ThisYear"
+  const OptionLastQuarter= "LastQuarter"
+  const OptionThisQuarter= "ThisQuarter"
+  const OptionLast5Month= "Last5Month"
+  // Label : Years
+  const OptionLast5Year= "Last5Year"
+
+  // Getting today's date
+  const today = new Date();
+  // Setting the start time of the day (Hours, Minutes, Seconds, MicroSeconds)
+  today.setHours(0,0,0,0);
+
+
+  // Calculation of start and end Date time and label selection based on the slected option
+
+  if (selectedOption.option == OptionToday )
+  {
+
+    // Calculating start date time
+    startDateTime= new Date(today.valueOf());
+
+    // Calculating end date time
+    endDateTime = new Date(startDateTime.valueOf());
+    endDateTime.setDate(endDateTime.getDate()+1);
+    endDateTime.setSeconds(-1);
+
+    // Writting to the console, the start and end date time
+    console.log(startDateTime);
+    console.log(endDateTime);
+
+  }
+
+  else if (selectedOption.option == OptionYesterday)
+  {
+     // Calculating start date time
+    startDateTime = new Date(today.valueOf());
+    startDateTime.setDate(startDateTime.getDate()-1);
+
+    // Calculating end date time
+    endDateTime= new Date(today.valueOf());
+    endDateTime.setSeconds(-1);
+
+    // Writting to the console, the start and end date time
+    console.log(startDateTime);
+    console.log(endDateTime);
+
+  }
+
+  else if (selectedOption.option == OptionThisWeek)
+  {
+    // Calculating start date time
+    startDateTime = new Date(today.valueOf());
+    startDateTime.setDate(startDateTime.getDate()-startDateTime.getDay());
+
+    // Calculating end date time
+    endDateTime = new Date(startDateTime.valueOf());
+    endDateTime.setDate(endDateTime.getDate() + 7);
+    endDateTime.setSeconds(-1);
+
+    // Writting to the console, the start and end date time
+    console.log(startDateTime);
+    console.log(endDateTime);
+  }
+
+  else if (selectedOption.option == OptionLastWeek)
+  {
+   // Calculating start date time
+    startDateTime = new Date(today.valueOf());
+    startDateTime.setDate(startDateTime.getDate()-startDateTime.getDay());
+    startDateTime.setDate(startDateTime.getDate()-7);
+
+    // Calculating end date time
+    endDateTime = new Date(startDateTime.valueOf());
+    endDateTime.setDate(endDateTime.getDate() + 7);
+    endDateTime.setSeconds(-1);
+
+    // Writting to the console, the start and end date time
+    console.log(startDateTime);
+    console.log(endDateTime);
+  }
+
+  else if (selectedOption.option == OptionThisMonth)
+  { 
+    // Calculating start date time
+    startDateTime = new Date(today.valueOf());
+    startDateTime.setDate(1);
+
+    // Calculating end date time
+    endDateTime = new Date(startDateTime.valueOf());
+    endDateTime.setMonth(endDateTime.getMonth() + 1);
+    endDateTime.setSeconds(-1);
+
+    // Writting to the console, the start and end date time
+    console.log(startDateTime);
+    console.log(endDateTime);
+
+  }
+
+  else if (selectedOption.option == OptionLastMonth)
+  {
+    // Calculating start date time
+    startDateTime = new Date(today.valueOf());
+    startDateTime.setDate(1);
+    startDateTime.setMonth(startDateTime.getMonth()-1);
+
+    // Calculating end date time
+    endDateTime = new Date(startDateTime.valueOf());
+    endDateTime.setMonth(endDateTime.getMonth() + 1);
+    endDateTime.setSeconds(-1);
+
+    // Writting to the console, the start and end date time
+    console.log(startDateTime);
+    console.log(endDateTime);
+
+  }
+
+  else if (selectedOption.option == OptionLastYear)
+  {
+    // Calculating start date time
+    startDateTime = new Date(today.getFullYear()-1,0,1,0,0,0,0);
+
+    // Calculating end date time
+    endDateTime = new Date(today.getFullYear(),0,1,0,0,0,0);
+    endDateTime.setSeconds(-1);
+
+    // Writting to the console, the start and end date time
+    console.log(startDateTime);
+    console.log(endDateTime);
+
+  }
+
+  else if (selectedOption.option == OptionThisYear)
+  {
+    // Calculating start date time
+    startDateTime = new Date(today.getFullYear(),0,1,0,0,0,0);
     
-      // Getting date and time after 24 hrs
-      const tomorrow = new Date();
-      tomorrow.setHours(startTime,0,0,0)
-      tomorrow.setDate(tomorrow.getDate()+ 1);
-    
-      // Getting date and time before 24 hrs
-      const Yesterday = new Date();
-      Yesterday.setHours(startTime,0,0,0)
-      Yesterday.setDate(Yesterday.getDate() - 1);
-    
-      // Defining start date time
-      let startDateTime= today;
-      // Defining end date time
-      let endDateTime= tomorrow;
-      if (selectedOption.name == 'Today')
-      {
-            // Defining start date time
-       startDateTime= today;
-      // Defining end date time
-       endDateTime= tomorrow;
-      }
-    
-      else if (selectedOption.name == 'Yesterday')
-      {
-            // Defining start date time
-      startDateTime= Yesterday;
-      // Defining end date time
-      endDateTime= today;
-      }
-      else if (selectedOption.name == "Custom Range")
-      {
-        startDateTime =  new Date(selectedOption.fromDate);
-        startDateTime.setHours(0,0,0,0);
-        endDateTime= new Date(selectedOption.toDate);
-        endDateTime.setDate(endDateTime.getDate()+1);
-        endDateTime.setSeconds(-1);
-        console.log("StartDate",startDateTime);
-        console.log("EndDate",endDateTime)
-    
-      }
-        
-        // Check if the selected Data range option is today or yesterday
-        if((selectedOption.name == 'Today' || selectedOption.name == 'Yesterday' || selectedOption.name == "Custom Range") &&  selectedOption.value.length !== 0 )
-        {
+    // Calculating end date time
+    endDateTime = new Date(today.getFullYear()+1,0,1,0,0,0,0);
+    endDateTime.setSeconds(-1);
+
+    // Writting to the console, the start and end date time
+    console.log(startDateTime);
+    console.log(endDateTime);
+
+  }
+
+  else if (selectedOption.option == OptionLastQuarter)
+  { 
+    // Calculating start date time
+    startDateTime = new Date(today.valueOf());
+    startDateTime.setDate(1);
+    let currentQuarter = Math.floor(startDateTime.getMonth()/3);
+    startDateTime.setMonth(currentQuarter * 3);
+    startDateTime.setMonth(startDateTime.getMonth()-3);
+
+    // Calculating end date time
+    endDateTime = new Date(startDateTime.valueOf());
+    endDateTime.setMonth(endDateTime.getMonth()+3);
+    endDateTime.setSeconds(-1);
+
+    // Writting to the console, the start and end date time
+    console.log(startDateTime);
+    console.log(endDateTime);
+
+  }
+
+  else if (selectedOption.option == OptionThisQuarter)
+  {
+    // Calculating start date time
+    startDateTime = new Date(today.valueOf());
+    startDateTime.setDate(1);
+    let currentQuarter = Math.floor(startDateTime.getMonth()/3);
+    startDateTime.setMonth(currentQuarter * 3);
+    startDateTime.setMonth(startDateTime.getMonth());
+
+    // Calculating end date time
+    endDateTime = new Date(startDateTime.valueOf());
+    endDateTime.setMonth(endDateTime.getMonth()+3);
+    endDateTime.setSeconds(-1);
+
+    // Writting to the console, the start and end date time
+    console.log(startDateTime);
+    console.log(endDateTime);
+
+  }
+
+  else if (selectedOption.option == OptionLast5Month)
+  {
+    // Calculating start date time
+    startDateTime = new Date(today.valueOf());
+    startDateTime.setMonth(startDateTime.getMonth()-4);
+
+    // Calculating end date time
+    endDateTime = new Date(startDateTime.valueOf());
+    endDateTime.setMonth(endDateTime.getMonth()+5);
+    endDateTime.setSeconds(-1);
+
+     // Writting to the console, the start and end date time
+    console.log(startDateTime);
+    console.log(endDateTime);
+
+  }
+
+  else if (selectedOption.option == OptionLast5Year)
+  {
+    // Calculating start date time
+    startDateTime = new Date(today.getFullYear()-4,0,1,0,0,0);
+
+    // Calculating end date time
+    endDateTime = new Date(today.getFullYear()+1,0,1,0,0,0);
+    endDateTime.setSeconds(-1);
+
+    // Writting to the console, the start and end date time
+    console.log(startDateTime);
+    console.log(endDateTime);
+
+  }
+    else if (selectedOption.name == "Custom Range")
+    {
+      // Calculating start date time
+      startDateTime =  new Date(selectedOption.fromDate);
+      startDateTime.setHours(0,0,0,0);
+
+      // Calculating end date time
+      endDateTime= new Date(selectedOption.toDate);
+      endDateTime.setDate(endDateTime.getDate()+1);
+      endDateTime.setSeconds(-1);
+
+      // Writting to the console, the start and end date time
+      console.log("StartDate",startDateTime);
+      console.log("EndDate",endDateTime)
+
+    }
     
     
           // Iterating the elements in data json file
@@ -130,7 +326,7 @@ const FourBlockChart = ({value_Application, selectedOption})=>{
               }
             }
           })
-        }
+        
     
     
     // store the length of the values of the keys of moduleUserlist
@@ -142,51 +338,6 @@ const FourBlockChart = ({value_Application, selectedOption})=>{
     console.log(arrayOfSetOfUser);
     
     }
-
-  else {
-    if(selectedOption.value.length!==0){
-    selectedOption.value.forEach((v, i)=>{
-      datas.forEach((e)=>{
-        if(e.Application===value_Application){ 
-            if(e[selectedOption.name]===v && e.Year === selectedOption.Year[i]){
-              const present = arrMonth.some((data)=>{
-                return data===e.Module;
-              })
-              if(!present){
-                arrMonth.push(e.Module);
-              }
-            }
-        }
-      });
-    })
-    }
-
-   
-// #########################
-
-// let arrYearFirst = arrMonth;
-arrYear = arrMonth
-arrYear.forEach((value1,i)=>{
-  let setOfUser=[];
-    datas.forEach((e)=>{
-     if (e.Application === value_Application && value1=== e.Module) {
-        selectedOption.value.forEach((v,i)=>{
-            if(e[selectedOption.name]===v  && e.Year === selectedOption.Year[i]){
-                 if (!setOfUser.includes(e.User))
-                        {
-                        setOfUser.push(e.User);
-                        }
-      }
-    })
-    }
-    })
- 
-    arrayOfSetOfUser.push(setOfUser.length)
-
-   
-})
-
-}
 
 let LicModule = [];
 let LiCount = [];
@@ -214,6 +365,7 @@ for (var j = 0; j < LicModule.length; j++) {
 }
 
 console.log("newArray:", newArray)
+console.log("TotalLicense", TotalLicCOunt)
 
 let newWeekCount = [];
 let RCount = [];
@@ -225,6 +377,8 @@ for (var t = 0; t < newArray.length; t++) {
 }
 
 console.log("ValueR",RCountg1)
+console.log("valueRCOunt", RCount)
+console.log(newArray)
 let RCount25 = [];
 let RCount50 = [];
 let RCount75 = [];
@@ -240,15 +394,15 @@ for (var j = 0; j < RCount.length; j++) {
         RCount25.push(arrayOfSetOfUser[j])
         RCountModName25.push(newArray[j])  
     }
-    else if(RCount[j]>25 && RCount<=50){
+    else if(RCount[j]>25 && RCount[j]<=50){
         RCount50.push(arrayOfSetOfUser[j])
         RCountModName50.push(newArray[j])
     }
-    else if(RCount[j]>50 && RCount<=75){
+    else if(RCount[j]>50 && RCount[j]<=75){
         RCount75.push(arrayOfSetOfUser[j])
         RCountModName75.push(newArray[j])
     }
-    else if(RCount[j] >= 75){
+    else if(RCount[j] > 75){
         RCount100.push(arrayOfSetOfUser[j])
         RCountModName100.push(newArray[j])
     } 
@@ -285,19 +439,42 @@ console.log("RCOunt25",RCountModName100)
         animation: {
           duration: 2000,
         },
+        scales: {
+          x: 
+          {
+            ticks: {
+              color: "black"
+            },
+            grid: {
+              display: false
+          }
+          },
+        
+        y:
+          {
+            beginAtZero: true,
+            grace:"5%",
+            
+            ticks : {
+              // color: "white",
+              maxTicksLimit: 4
+            },
+            grid:{
+                display: false
+            },
+  
+          },
+        },
         plugins: {
+          datalabels: {
+            color: "black",
             anchor:"end",
             align:"top",
-            plugins: [ChartDataLabels],
-            datalabels: {
-              align:'top',
-              color: "black",
-              display: true,
-              font:{
-                size:"12",
-              }
-              
-            },
+            font:{
+              size:"12",
+            }
+          },
+          plugins: [ChartDataLabels],
             legend: {
                display: false,
               position: "top",
@@ -341,19 +518,42 @@ const data_TeamcenterSecond = {
       animation: {
         duration: 2000,
       },
+      scales: {
+        x: 
+        {
+          ticks: {
+            color: "black"
+          },
+          grid: {
+            display: false
+        }
+        },
+      
+      y:
+        {
+          beginAtZero: true,
+          grace:"5%",
+          
+          ticks : {
+            // color: "white",
+            maxTicksLimit: 4
+          },
+          grid:{
+              display: false
+          },
+
+        },
+      },
       plugins: {
-        anchor:"end",
-        align:"top",
-        plugins: [ChartDataLabels],
         datalabels: {
-          align:'top',
           color: "black",
-          display: true,
+          anchor:"end",
+          align:"top",
           font:{
             size:"12",
           }
-          
         },
+        plugins: [ChartDataLabels],
         legend: {
            display: false,
           position: "top",
@@ -384,10 +584,13 @@ const data_TeamcenterThird = {
       {
         data: RCount50,
         backgroundColor: [
-          "rgb(134, 54, 180)",
-          "rgb(243, 153, 24)",
+          "#4A4031",
+          "#FA6A64",
           "rgb(228, 0, 23)",
-          "#FA6A64","#7A4E48","#4A4031","#F6E2BB","#9EC6B8",
+          "rgb(243, 153, 24)",
+         
+          "rgb(134, 54, 180)",
+         "#7A4E48","#F6E2BB","#9EC6B8",
           "#E6B39A","#E6CBA5","#EDE3B4","#8B9E9B","#6D7578"
         ],
         borderWidth: 1,
@@ -399,19 +602,42 @@ const data_TeamcenterThird = {
       animation: {
         duration: 2000,
       },
+      scales: {
+        x: 
+        {
+          ticks: {
+            color: "black"
+          },
+          grid: {
+            display: false
+        }
+        },
+      
+      y:
+        {
+          beginAtZero: true,
+          grace:"5%",
+          
+          ticks : {
+            // color: "white",
+            maxTicksLimit: 4
+          },
+          grid:{
+              display: false
+          },
+
+        },
+      },
       plugins: {
-        anchor:"end",
-        align:"top",
-        plugins: [ChartDataLabels],
         datalabels: {
-          align:'top',
           color: "black",
-          display: true,
+          anchor:"end",
+          align:"top",
           font:{
             size:"12",
           }
-          
         },
+        plugins: [ChartDataLabels],
         legend: {
            display: false,
           position: "top",
@@ -441,34 +667,66 @@ const data_TeamcenterFourth = {
       {
         data: RCount100,
         backgroundColor: [
-          "rgb(134, 54, 180)",
+          
           "rgb(243, 153, 24)",
           "rgb(228, 0, 23)",
           "#FA6A64","#7A4E48","#4A4031","#F6E2BB","#9EC6B8",
-          "#E6B39A","#E6CBA5","#EDE3B4","#8B9E9B","#6D7578"
+          "#E6B39A","#E6CBA5","#EDE3B4","#8B9E9B","#6D7578","rgb(134, 54, 180)",
         ],
         borderWidth: 1,
       },
     ],
 
     options_TeamcenterFourth: {
+
       maintainAspectRatio: false,
       animation: {
         duration: 2000,
       },
-      plugins: {
-        // anchor:"end",
-        align:"top",
-        plugins: [ChartDataLabels],
-        datalabels: {
-          align:'top',
-          color: "black",
-          display: true,
-          font:{
-            size:"12",
-          }
-          
+      scales: {
+        x: 
+        {
+          ticks: {
+            color: "black"
+          },
+          grid: {
+            display: false
+        }
         },
+      
+      y:
+        {
+          beginAtZero: true,
+          grace:"5%",
+          
+          ticks : {
+            // color: "white",
+            maxTicksLimit: 4
+          },
+          grid:{
+              display: false
+          },
+
+        },
+      },
+      plugins: {
+
+      datalabels: {
+            color: "black",
+            anchor:"end",
+            align:"top",
+            font:{
+              size:"12",
+            }
+          },
+          plugins: [ChartDataLabels],
+        // datalabels: {
+        //   align:'top',
+        //   color: "black",
+        //   display: true,
+          
+          
+        // },
         legend: {
            display: false,
           position: "top",
@@ -545,7 +803,7 @@ const getLast6Months = () => {
       <>
       {(value_Application == "Teamcenter" || value_Application === "Tc-VisMockup")?
        (<div className='OverallC'> 
-         <button className="FullScreen" onClick={toggleFullScreen}>Fullscreen</button>      
+         {/* <button className="FullScreen" onClick={toggleFullScreen}>Fullscreen</button>       */}
         <div className='Two'>
       
             <div className='graph3'ref={chartContainer}
@@ -553,7 +811,8 @@ const getLast6Months = () => {
    position: "relative",
    width: isFullScreen ? "100%" : "50%",
    height: isFullScreen ? "65vh" : "49vh"
- }}  >
+ }} 
+  >
             <Bar
                data={data_TeamcenterFourth}
                options={data_TeamcenterFourth.options_TeamcenterFourth}
@@ -565,6 +824,7 @@ const getLast6Months = () => {
    width: isFullScreen ? "98%" : "50%",
    height: isFullScreen ? "65vh" : "49vh"
  }}>
+  
             <Bar
             data={data_TeamcenterThird}
             options={data_TeamcenterThird.options_TeamcenterThird}

@@ -28,6 +28,8 @@ function Navbar({
     setOpen,
     selectedOption,
     setSelectedOption,
+    dropdownvalue,
+    setDropDownValue,
   }) {
 	const navRef = useRef();
 
@@ -47,7 +49,7 @@ function Navbar({
     
       const [isExpanded, setExpendState] = useState(false);
     
-      const [dropdownvalue,setDropDownValue] = useState("");
+      // const [dropdownvalue,setDropDownValue] = useState("");
       console.log(dropdownvalue)
     
       const handlechange_Week = (e) => {
@@ -313,7 +315,7 @@ console.log(getPreviousQuarterName());
         setSelectedOption(getLast6Months());
         else if (event.target.value === "Current Quater")
         setSelectedOption(getCurrentQuarterName());
-        else if (event.target.value === "Last Quater")
+        else if (event.target.value === "Last Quarter")
         setSelectedOption(getPreviousQuarterName());
         // else if (event.target.value === "Custom Range") setSelectedOption(getDateRange());
       };
@@ -391,7 +393,7 @@ console.log(getYesterday());
                 <option value="Last Week">Last Week</option>
                 <option value="Previous Month">Last Month</option>
                 <option value="Previous Year">Last Year</option>
-                <option value="Last Quater">Last Quarter</option>
+                <option value="Last Quarter">Last Quarter</option>
                 <option value="Last 6Months">Last 5 Month</option>
                 <option value="Last 6Years">Last 5 Year</option>
                 <option value="Custom Range">Custom Range</option>
