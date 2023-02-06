@@ -10,6 +10,7 @@ import LinegraphCustomRange from "../../Component/LineChart/LineChart";
 import StackedChart from "../../Component/StackedChart/StackedChart";
 import FourBlockChart from "../../Component/FourBlockerChart/FourBlockChart";
 import Navbar from "../../Component/Navbar/Navbar";
+import StackedUpdate from "../../Component/StackedUpdate/StackedUpdate";
 
 
 
@@ -88,7 +89,7 @@ function Home() {
 
       {open!=="" ?
       (<div className="GraphLayout"> 
-           <StackedChart
+           {/* <StackedChart
             selectedOption={selectedOption}
             setSelectedOption={setSelectedOption}
             value_Application={value_Application}
@@ -97,7 +98,20 @@ function Home() {
             setSelectedOptions = {setSelectedOptions}
             dropdownvalue = {dropdownvalue}
             setDropDownValue = {setDropDownValue}
-           />
+           /> */}
+
+        <StackedUpdate 
+        selectedOption={selectedOption}
+        setSelectedOption={setSelectedOption}
+        value_Application={value_Application}
+        setValue_Application={setValue_Application}
+        selectedOptions = {selectedOptions}
+        setSelectedOptions = {setSelectedOptions}
+        dropdownvalue = {dropdownvalue}
+        setDropDownValue = {setDropDownValue}
+
+        />
+
         <LinegraphCustomRange 
         selectedOption={selectedOption}
         setSelectedOption={setSelectedOption}
@@ -114,6 +128,8 @@ function Home() {
        dropdownvalue = {dropdownvalue}
        setDropDownValue = {setDropDownValue}
         />
+
+  
 
           <div className="ThirdRow">
             {/* <ChartTest /> */}

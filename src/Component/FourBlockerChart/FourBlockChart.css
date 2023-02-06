@@ -1,28 +1,5 @@
 
-.PieOuter1{
-    display: flex;
-    flex-direction: row;
-    background-color: white;
-    margin-top: 40px;
-    margin-left: 20px ; 
-    border-radius: 10px;
-    width: 35%;
-    height: 30vh;
-    
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 
-}
-
-.SecondGraph{
-    background-color: white;
-    margin-left: 80px ; 
-    border-radius: 10px;
-    width: 35%;
-    height: 30vh;
-    
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-
-}
 
 .TwoCharts{
     display: flex;
@@ -42,12 +19,8 @@
 
 .Utlity_Piechart_All{
     display: flex;
-   
     flex-direction: column;
    
-    
-
-
 }
 
 .Utlity_Piechart_All-dark{
@@ -66,7 +39,7 @@
 .graph3{
     background-color: white;
     width: 45%;
-    height: 45vh;
+    height: 42vh;
     margin-top: 20px;
     margin-left: 40px;
 }
@@ -75,7 +48,7 @@
     background-color: white;
     margin-left: 10px;
     width: 45%;
-    height: 45vh;
+    height: 42vh;
     margin-top: 20px;
     margin-bottom: 20px;
 }

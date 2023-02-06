@@ -6,6 +6,7 @@ import { useRef } from 'react';
 import { Doughnut } from "react-chartjs-2";
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import ChartPluginStacked100 from "chartjs-plugin-stacked100";
+import  zoomPlugin  from "chartjs-plugin-zoom";
 import "chart.js/auto"
 // import App1 from './label';
 import {
@@ -33,7 +34,8 @@ ChartJS.register(
     Tooltip,
     Legend,
     ChartDataLabels,
-    ChartPluginStacked100
+    ChartPluginStacked100,
+    zoomPlugin
 );
 
 const LinegraphCustomRange = ({ value_Application,selectedOption})=>{
@@ -663,7 +665,24 @@ const option_WeekFirst = {
               size:"12",
             }
           },
-          plugins: [ChartDataLabels],
+          plugins: [ChartDataLabels, zoomPlugin],
+          zoom: {
+            pan:{
+              enabled: true,
+              mode: "x",
+              threshlod: 10
+            },
+            zoom: {
+              wheel: {
+                enabled: true,
+                speed: 0.1,
+              },
+              pinch: {
+                enabled: true
+              },
+             
+            }
+          },
           legend: {
              display: true,
             position: "right",

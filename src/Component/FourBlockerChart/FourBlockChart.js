@@ -807,11 +807,11 @@ const getLast6Months = () => {
         <div className='Two'>
       
             <div className='graph3'ref={chartContainer}
- style={{
-   position: "relative",
-   width: isFullScreen ? "100%" : "50%",
-   height: isFullScreen ? "65vh" : "49vh"
- }} 
+//  style={{
+//    position: "relative",
+//    width: isFullScreen ? "100%" : "50%",
+//    height: isFullScreen ? "65vh" : "49vh"
+//  }} 
   >
             <Bar
                data={data_TeamcenterFourth}
@@ -819,11 +819,12 @@ const getLast6Months = () => {
             />
         </div>
             <div className='graph4' ref={chartContainer}
- style={{
-   position: "relative",
-   width: isFullScreen ? "98%" : "50%",
-   height: isFullScreen ? "65vh" : "49vh"
- }}>
+//  style={{
+//    position: "relative",
+//    width: isFullScreen ? "98%" : "50%",
+//    height: isFullScreen ? "65vh" : "49vh"
+//  }}
+ >
   
             <Bar
             data={data_TeamcenterThird}
@@ -835,22 +836,24 @@ const getLast6Months = () => {
         </div> 
         <div className='Two1'>
             <div className='graph3' ref={chartContainer}
- style={{
-   position: "relative",
-   width: isFullScreen ? "98%" : "50%",
-   height: isFullScreen ? "65vh" : "49vh"
- }}>
+//  style={{
+//    position: "relative",
+//    width: isFullScreen ? "98%" : "50%",
+//    height: isFullScreen ? "65vh" : "49vh"
+//  }}
+ >
         <Bar
                 data={data_TeamcenterSecond}
                 options={data_TeamcenterSecond.options_Teamcentersecond}
             />
         </div>
             <div className='graph4' ref={chartContainer}
- style={{
-   position: "relative",
-   width: isFullScreen ? "98%" : "50%",
-   height: isFullScreen ? "65vh" : "49vh"
- }}>
+//  style={{
+//    position: "relative",
+//    width: isFullScreen ? "98%" : "50%",
+//    height: isFullScreen ? "65vh" : "49vh"
+//  }}
+ >
             <Bar
               data={data_Teamcenter}
               options={data_Teamcenter.options_Teamcenter}
